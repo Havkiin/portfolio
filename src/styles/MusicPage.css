@@ -1,0 +1,11 @@
+.ArtistName {
+    font-size: 4rem;
+    margin-top: 3%;
+}
+
+.ArtistBio {
+    font-size: 1.5rem;
+    width: 65%;
+    justify-self: center;
+    margin-bottom: 5%;
+}

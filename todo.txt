@@ -1,0 +1,7 @@
+Visuals Page:
+- Visuals don't play on page first load/reload
+
+-----
+
+- Handle 9:16 ratio (phone view)
+- Translate into French

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.BioRoot {
+  width: 50vw;
+  align-items: center;
+}
+
+.App {
+  background-color: #212121;
+  color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1.5vw);
+  text-align: center;
+  /*font-family: "Roboto Slab", serif;*/
+  font-family: "Rubik", sans-serif
+}
+
+.Roboto {
+  font-family: "Roboto Slab", serif;
+  /*font-family: "Rubik Mono One", monospace;*/
+}
+
+.AppHeader {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  margin: 2vh 0 2vh;
+  font-size: 0.5em;
+  z-index: 1;
+}
+
+.HeaderItem {
+  display: inline-block;
+  padding: 0 2% 0;
+}
+
+.HeaderItem:hover {
+  border: 5px;
+  text-decoration: underline;
+}
+
+.orange {
+  color: #fc9153;
+}
+
+.greywhite {
+  color: #eeeeee;
+}
+
+.black-background {
+  background-color: #000;
+}
+
+.Content {
+  width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.AppFooter {
+  height: 5vh;
+  width: 75vw;
+  display: flex;
+  font-size: 0.5em;
+  align-items: center;
+}
