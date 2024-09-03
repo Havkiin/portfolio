@@ -26,7 +26,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/vite.config.ts", "vitest.config.ts", "src", "amplify/backend/types"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "files.associations": [{ "*.scss": "postcss" }]
 }
