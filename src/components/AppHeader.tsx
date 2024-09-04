@@ -13,7 +13,7 @@ function AppHeader () {
   }
   
   function DisplayPages({ pages } : { pages : Route[] }) {
-    return pages.map((item, index) => {
+    return pages.map((_, index) => {
       const isCurrentPage = location.pathname === `${pages[index].path.toLowerCase()}`;
       const classes = "HeaderItem" + (isCurrentPage ? " orange" : "");
       return (

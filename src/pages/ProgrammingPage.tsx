@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import AppHeader from '../components/AppHeader';
 import AppFooter from '../components/AppFooter';
-import { ProgrammingProject, programmingProjects, ProgrammingProjectType } from '../data/Data';
+import { ProgrammingProject, programmingProjects } from '../data/Data';
 import '../styles/ProjectCatalog.css';
 
 function Projects ({ projects } : { projects : ProgrammingProject[] }) {
@@ -41,38 +41,38 @@ function Projects ({ projects } : { projects : ProgrammingProject[] }) {
   )
 }
 
-function LanguageOptions ({ projects } : { projects : ProgrammingProject[] }) {
-  let options : ProgrammingProjectType[] = [];
+// function LanguageOptions ({ projects } : { projects : ProgrammingProject[] }) {
+//   let options : ProgrammingProjectType[] = [];
 
-  projects.forEach((p) => {
-    if (!options.includes(p.type)) {
-      options.push(p.type);
-    }
-  });
+//   projects.forEach((p) => {
+//     if (!options.includes(p.type)) {
+//       options.push(p.type);
+//     }
+//   });
 
-  // Sort options alphabetically
-  options.sort((a, b) => a.localeCompare(b));
+//   // Sort options alphabetically
+//   options.sort((a, b) => a.localeCompare(b));
 
-  const finalOptions = options.map((type, i) => (
-    <option value={type} key={i}>{type}</option>
-  ));
+//   const finalOptions = options.map((type, i) => (
+//     <option value={type} key={i}>{type}</option>
+//   ));
 
-  return <>{finalOptions}</>;
-}
+//   return <>{finalOptions}</>;
+// }
 
 function ProgrammingPage () {
-  const [displayedProjects, setDisplayedProjects] = useState<ProgrammingProject[]>(programmingProjects);
+  // const [displayedProjects, setDisplayedProjects] = useState<ProgrammingProject[]>(programmingProjects);
  
-  function FilterProjects (type : string) {
-    if (type === ProgrammingProjectType.All) {
-      return setDisplayedProjects(programmingProjects);
-    }
-    else {
-      return setDisplayedProjects(programmingProjects.filter((p) => p.type === type));
-    }
-  }
+  // function FilterProjects (type : string) {
+  //   if (type === ProgrammingProjectType.All) {
+  //     return setDisplayedProjects(programmingProjects);
+  //   }
+  //   else {
+  //     return setDisplayedProjects(programmingProjects.filter((p) => p.type === type));
+  //   }
+  // }
 
-  const finalDisplayed = [...displayedProjects].reverse();
+  const finalDisplayed = [...programmingProjects].reverse();
 
   return (
     <div className="App">
