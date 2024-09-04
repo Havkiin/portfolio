@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import AppHeader from '../components/AppHeader'
 import AppFooter from '../components/AppFooter';
-import { VisualProject, visualProjects } from '../components/Data';
+import { VisualProject, visualProjects } from '../data/Data';
 import '../styles/ProjectCatalog.css';
 import '../styles/VisualsPage.css';
 

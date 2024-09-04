@@ -1,8 +1,9 @@
 import React from 'react';
 import AppHeader from '../components/AppHeader';
 import AppFooter from '../components/AppFooter';
-import { MusicProject, musicProjects } from '../components/Data';
+import { MusicProject, musicProjects } from '../data/Data';
 import '../styles/MusicPage.css';
+import i18next from 'i18next';
 
 function MusicProjects ( { projects } : { projects : MusicProject[] }) {
   return (
@@ -31,7 +32,7 @@ function MusicPage () {
         <div className = "ProjectsRoot">
           <h1 className="ArtistName Roboto orange">CLM</h1>
           <div className="ArtistBio Roboto greywhite">
-            is a techno & hard techno project, exploring the brutality and industrialness of a dark universe filled with frenzied melodies.
+            {i18next.t('music:description')}
           </div>
           <MusicProjects projects = {musicProjects} />
         </div>

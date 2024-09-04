@@ -1,8 +1,39 @@
-export enum ProjectType {
-    Programming = 'Programming',
-    Visuals = 'Visuals',
-    Music = 'Music',
+export enum Routes {
+    default = '/',
+    home = '/home',
+    programming = '/programming',
+    visuals = '/visuals',
+    music = '/music',
 }
+
+export type Route = {
+    id: number,
+    path: Routes,
+    translateKey: string
+}
+
+export const routes : Route[] = [
+    {
+        id: 0,
+        path: Routes.home,
+        translateKey: 'pages:home'
+    },
+    {
+        id: 0,
+        path: Routes.programming,
+        translateKey: 'pages:programming'
+    },
+    {
+        id: 0,
+        path: Routes.visuals,
+        translateKey: 'pages:visuals'
+    },
+    {
+        id: 0,
+        path: Routes.music,
+        translateKey: 'pages:music'
+    },
+]
 
 export enum ProgrammingProjectType {
     All = 'All',
@@ -27,10 +58,10 @@ export const programmingProjects : ProgrammingProject[] = [
         name: 'Défi Face à Face',
         banner: '/FaceAFace_1.png',
         texts: [
-            'This project was carried out while I worked for PLAYMIND during <i>Montréal en Lumière</i> in 2019. The core gameplay loop was a timed trial during which the players had to score the highest possible score, hitting the targets on screen with foam balls.',
-            'The game featured several power-ups, and a leaderbord which kept track of the best scores attained. The project was made on <i>Unity</i> and featured iterative gameplay life cycles.',
-            'The setup was made on Montreal\'s <i>Place des Arts</i>, and I was responsible for maintaining the code base and making necessary gameplay adjustments on-site. The game detected the ball impacts thanks to a lazer sweeping the area in front of the screen. I was also responsible for handling the lazer\'s implementation and behaviour, which came through a C++ library.',
-            'The final seconds of the game featured a \"frenzy mode\" where players would try and throw as many balls as possible on the goalkeeper.'
+            'programming:faceaface:text1',
+            'programming:faceaface:text2',
+            'programming:faceaface:text3',
+            'programming:faceaface:text4'
         ],
         codeblocks: [],
         images: ['/FaceAFace_5.png', '/FaceAFace_2.jpg', '/FaceAFace_3.png', '/FaceAFace_4.png'],
@@ -41,9 +72,9 @@ export const programmingProjects : ProgrammingProject[] = [
         name: 'Playbooth',
         banner: '/Playbooth.png',
         texts: [
-            '<i>Playbooth</i> is a packaged interactive experience, relying on the interaction between several components to function.</p><p>The first iteration of the project was installed at E3 in 2019 through a partnership with <i>Bandai Namco</i> for their upcoming game <i>Man Of Medan</i>. It was an interactive experience integrated into a photobooth, where people would play through a sequence and have their picture taken during a jumpscare.</p><p>The system operated with a computer, a LED display, a camera which would take the picture, a printer which would print the picture within a frame, and a tablet which would get the user\'s information and send them the picture.',
-            'A later iteration of the project, <i>The Last Floor</i>, would take the concept into a post-apocalyptic setting, with hordes of zombies rushing towards the users.</p><p>This project ran on <i>Unreal Engine</i> and made use of its Timeline feature.',
-            'More information : <a href=\'https://playmind.com/products/playbooth/\'>https://playmind.com/products/playbooth/</a>'
+            'programming:playbooth:text1',
+            'programming:playbooth:text2',
+            'programming:playbooth:text3'
         ],
         codeblocks: [],
         images: ['/ManOfMedan_E3.png', '/TheLastFloor_ingame.png'],
@@ -61,10 +92,10 @@ export const programmingProjects : ProgrammingProject[] = [
         ],
         images: [],
         texts: [
-            'A simple implementation of a telekinesis ability, wrapped inside an actor component. It\'s bound to Unreal Engine\'s Enhanced Input Component in <code>BeginPlay().</code>',
-            'From there, <code>PickUpItem()</code> handles item pickup and handling, as the player moves the mouse across the screen.',
-            'For simplicity\'s sake, I decided wether an item could be picked up or not based on if it was simulating physics. In a real game context, these objects would have their own collision channel.</p><p><code>GetPOV_Origin()</code> returns a vector with the camera\'s displacement from the actual character position.</p><p><code>ThrowItem()</code> handles throwing the held item in the aimed direction:',
-            '<code>ReleaseKey()</code> and <code>ReleaseItem()</code> handle disposing of the particle VFX and re-enabling gravity for the moved item.'
+            'programming:telekinesis:text1',
+            'programming:telekinesis:text2',
+            'programming:telekinesis:text3',
+            'programming:telekinesis:text4'
         ],
         type: ProgrammingProjectType.Gameplay,
     },
@@ -81,11 +112,11 @@ export const programmingProjects : ProgrammingProject[] = [
         ],
         images: [],
         texts: [
-            'An implementation of a blink ability, similar to the one in <i>Dishonored</i>. Upon initialization, we spawn the VFX directly, since its position needs to be updated every frame when deciding where to blink.',
-            '<code>PickBlinkLocation()</code> handles deciding on a suitable location to blink. First, we perform a ray cast in a straight line.',
-            'Then, if we hit an actor (i.e. a wall or any vertical surface), we perform another raycast downwards, to see if there would be a suitable location on the ground for us.',
-            '<code>characterRadius</code> and <code>characterHalfHeight</code> provide us with the dimensions of the character\'s capsule, which is its collision\'s shape.</p><p>The origin of the downwards raycast is set half the capsule size away from the object we hit, to avoid casting into it. When we have found a suitable location, we add the character\'s half height to position them correctly.</p><p>Now, we also want to be able to teleport onto ledges we cannot see. For this, we will perform a box cast if we don\'t hit any object, to check for a ledge underneath the cast direction.',
-            'Finally, if we found a suitable location, we display the VFX and indicate it\'s possible to blink. Upon key realease, we perform the blink.',
+            'programming:blink:text1',
+            'programming:blink:text2',
+            'programming:blink:text3',
+            'programming:blink:text4',
+            'programming:blink:text5',
         ],
         type: ProgrammingProjectType.Gameplay,
     },
@@ -163,27 +194,27 @@ export const resume : ResumeItem[] = [
         link: 'https://www.concordia.ca',
         title: 'Bachelor\'s Degree\nComputer Science',
         years: '2014 - 2018',
-        description: "• Learned the basics of programming & computer science\n• Specialized in Computer Games",
+        description: 'home:resume:concordia'
     },
     {
         image: '/Playmind_logo.png',
         link: 'http://playmind.com/',
         title: 'Gameplay & Systems\nProgrammer',
         years: '2018 - 2019',
-        description: '• Experience with Unity 3D (C#)\n• Worked on developping and maintaining numerical installations & game projects\n• Learned how to iterate rapidly upon client feedback, and handle issues when projects are live',
+        description: 'home:resume:playmind'
     },
     {
         image: '/Behaviour_logo.svg',
         link: 'https://www.bhvr.com/',
         title: 'Gameplay\nProgrammer',
         years: '2019 - 2020',
-        description: '• Worked on an unreleased Stadia project\n• Experience with Unreal Engine\'s Gameplay Ability System (C++ and Blueprint)\n• Experience with multiplayer gameplay through Unreal Engine\'s Replication system',
+        description: 'home:resume:behaviour'
     },
     {
         image: '/Udem_logo.svg',
         link: 'https://www.umontreal.ca/',
         title: 'Major\nDigital Music',
         years: '2021 - 2024',
-        description: '• Expanded my creative abilities through the exploration of sound and sound systems\n• Created multiple projects and performances with TouchDesigner, Ableton Live, Wwise',
-    },
+        description: 'home:resume:udem'
+    }
 ]

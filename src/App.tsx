@@ -5,8 +5,8 @@ import MusicPage from './pages/MusicPage.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import VisualsPage from './pages/VisualsPage.tsx';
 import ProjectPage from './pages/ProjectPage.tsx';
-import { programmingProjects } from './components/Data';
-import { Routes } from './routes/Routes';
+import { programmingProjects } from './data/Data.ts';
+import { Routes } from './data/Data.ts'
 import './styles/App.css';
 
 function App () {

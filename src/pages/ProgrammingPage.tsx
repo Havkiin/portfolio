@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import AppHeader from '../components/AppHeader';
 import AppFooter from '../components/AppFooter';
-import { ProgrammingProject, programmingProjects, ProgrammingProjectType } from '../components/Data';
+import { ProgrammingProject, programmingProjects, ProgrammingProjectType } from '../data/Data';
 import '../styles/ProjectCatalog.css';
 
 function Projects ({ projects } : { projects : ProgrammingProject[] }) {
@@ -79,13 +79,13 @@ function ProgrammingPage () {
       <AppHeader />
       <div className="ProjectContent">
         <div className="ProjectsRoot">
-          <div className="Filters">
-            <label>Project Type </label>
+          {/* <div className="Filters">
+            <p>Project Type </p>
             <select name="languages" className="LanguageSelect" onChange={(e) => FilterProjects(e.target.value)}>
               <option value="All">All</option>
               <LanguageOptions projects = {programmingProjects} />
             </select>
-          </div>
+          </div> */}
           <div>
             <Projects projects = {finalDisplayed} />
           </div>

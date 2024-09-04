@@ -4,4 +4,8 @@ Visuals Page:
 -----
 
 - Handle 9:16 ratio (phone view)
-- Translate into French
+- Hovers don't work on phones (career page)
+
+-----
+
+- Crop TheBigQuiet and Beyond

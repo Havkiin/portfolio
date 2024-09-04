@@ -53,12 +53,29 @@
   text-decoration: underline;
 }
 
+.LanguageSelect {
+  position: absolute;
+  right: 5%;
+}
+
+.LanguageSelect:hover {
+  text-decoration: underline;
+}
+
 .orange {
   color: #fc9153;
 }
 
+.orange::before {
+  background-color: #fc9153;
+}
+
 .greywhite {
   color: #eeeeee;
+}
+
+.greywhite::before {
+  background-color: #eeeeee;
 }
 
 .black-background {
