@@ -5,7 +5,7 @@ Visuals Page:
 
 - Handle 9:16 ratio (phone view)
 - Hovers don't work on phones (career page)
-
------
-
-- Crop TheBigQuiet and Beyond
+- Back to projects orange button
+- Contact in footer
+- Animation on arrows visuals
+- UTF-8 charset (✔️)
