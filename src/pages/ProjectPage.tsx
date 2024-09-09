@@ -51,7 +51,7 @@ function ProjectPage ({ project } : { project : ProgrammingProject }) {
           </div>
         </div>
         <DisplayContent project={project} />
-        <div><Link to={Routes.programming} className="textLink greywhite">{i18next.t('programming:backToProjects')}</Link></div>
+        <div><button className="BackButton"><Link to={Routes.programming}>{i18next.t('programming:backToProjects')}</Link></button></div>
       </div>
       <AppFooter />
     </div>

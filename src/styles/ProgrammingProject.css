@@ -51,3 +51,18 @@
 .ImageBlock {
     width: 100%;
 }
+
+.BackButton {
+    font-size: 0.8em;
+    padding: 4%;
+    white-space: nowrap;
+    border-radius: 2% / 10%;
+    background-color: #fc9153;
+    border: solid 2px transparent;
+}
+
+.BackButton:hover {
+    background-color: white;
+    color: #fc9153;
+    border: solid 2px #fc9153;
+}

@@ -63,6 +63,10 @@ i18next
             },
             music: {
                 description: 'is a techno & hard techno project, exploring the brutality and industrialness of a dark universe filled with frenzied melodies.'
+            },
+            footer: {
+                contact: 'Contact me',
+                resume: 'Download my resume'
             }
         },
         fr : {
@@ -119,10 +123,13 @@ i18next
                     text5: 'Enfin, si nous trouvons un emplacement approprié, nous affichons le VFX pour indiquons qu\'une téléportation est possible. Lorsque la touche est relâchée, nous effectuons la téléportation.'
                 },
                 backToProjects: 'Retour aux projets'
-            },
-            
+            }, 
             music: {
                 description: 'est un projet de techno & hard techno explorant la brutalité et l\'industrialité d\'un univers sombre, empli de mélodies frénétiques.'
+            },
+            footer: {
+                contact: 'Contactez-moi',
+                resume: 'Téléchargez mon CV'
             }
         }
     }
