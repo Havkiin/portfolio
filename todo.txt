@@ -13,3 +13,7 @@ Visuals Page:
 - UTF-8 charset
 - Back to projects orange button
 - Contact in footer
+
+----------
+
+https://coolors.co/212121-2d2d2d-4c7f96-ffbfb7-fc9153

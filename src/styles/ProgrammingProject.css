@@ -59,6 +59,7 @@
     border-radius: 2% / 10%;
     background-color: #fc9153;
     border: solid 2px transparent;
+    margin-bottom: 5vh;
 }
 
 .BackButton:hover {

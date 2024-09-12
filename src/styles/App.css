@@ -93,33 +93,37 @@
 }
 
 .greywhite {
-  color: #eeeeee;
+  color: #eee;
 }
 
 .greywhite::before {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
 
 .black-background {
   background-color: #000;
 }
 
+.lightgrey-background {
+  background-color: #242424;
+}
+
+.lightergrey-background {
+  background-color: #282828;
+}
+
 .Content {
-  width: 75vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .AppFooter {
-  height: 5vh;
-  width: 75vw;
-  margin: 5vh 0 0;
+  height: 7vh;
+  width: 100%;
+  padding: 0 12.5% 0;
   display: flex;
-  font-size: 0.5em;
+  font-size: 0.4em;
   align-items: center;
   justify-content: space-evenly;
 }
