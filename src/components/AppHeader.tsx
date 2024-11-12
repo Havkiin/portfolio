@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Route, routes } from '../data/Data';
+import { RouteType, RouteEnums, routes } from '../data/Data.tsx';
 import i18next from 'i18next';
 
 function AppHeader () {
@@ -12,9 +12,10 @@ function AppHeader () {
     i18next.changeLanguage(lng);
   }
   
-  function DisplayPages({ pages } : { pages : Route[] }) {
+  function DisplayPages({ pages } : { pages : RouteType[] }) {
     return pages.map((_, index) => {
-      const isCurrentPage = location.pathname === `${pages[index].path.toLowerCase()}`;
+      const isCurrentPage = (location.pathname === `${pages[index].path.toLowerCase()}`) ||
+        (location.pathname === RouteEnums.default && pages[index].path.toLowerCase() === RouteEnums.home);
       const classes = "HeaderItem" + (isCurrentPage ? " orange" : "");
       return (
         <div className={classes} key={index}>

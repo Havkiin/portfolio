@@ -1,0 +1,186 @@
+.ScrollPage {
+  height: 100vh;
+  width: 100%;
+  padding: 0 12.5% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.IntroRoot {
+  display: flex;
+}
+
+.HeadshotRoot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    overflow: hidden;
+    user-select: none;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.blog-shadow-dreamy {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+              0 2px 4px rgba(0,0,0,0.07), 
+              0 4px 8px rgba(0,0,0,0.07), 
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07), 
+              0 32px 64px rgba(0,0,0,0.07);
+}
+
+.HeadshotImage {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.BioRoot {
+    display: inline-flex;
+    width: 75%;
+    padding:5%;
+    margin:0;
+    text-align: left;
+}
+
+.ResumeTitle {
+  position: absolute;
+  top: 10vh;
+  font-size: 2em;
+  letter-spacing: 0.6em;
+}
+
+.Resume {
+  width: 75%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+}
+
+.ResumeItems {
+  display: flex;
+  width: 100%;
+  height: 33%;
+}
+
+.ResumeItems:hover + .ResumeItemDescription {
+  opacity: 1;
+}
+
+.ResumeItems:focus + .ResumeItemDescription {
+  opacity: 1;
+}
+
+.ResumeItemDescription {
+  width: 100%;
+  height: 66%;
+  display: flex;
+  justify-content: start;
+  font-size: 0.8em;
+  white-space: pre-wrap;
+  margin-top: 10%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ResumeItemDescription p {
+  text-align: start;
+}
+
+.ResumeSquareAndSeparator {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ResumeSquare {
+  height: 100%;
+  width: 80%;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4% 0;
+}
+
+.ResumeSquare:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.ResumeSquareSeparator {
+  width: 3vw;
+}
+
+.ResumeSquareImageRoot {
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.ResumeSquareImageRoot a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ResumeSquareImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ResumeSquareTitleRoot {
+  height: 60%;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ResumeSquareTitle {
+  font-size: 0.5em  ;
+  width: 100%;
+  height: 50%;
+  margin-top: 2vh;
+  align-items: start;
+  justify-content: center;
+  white-space: pre-wrap;
+}
+
+.ContactContainer {
+  width: 75%;
+}
+
+.ContactContainer p {
+  padding: 5vh 0 5vh;
+  font-size: 0.7em;
+}
+
+.Email:hover {
+  text-decoration: underline;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+} */
+
+/* @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+} */

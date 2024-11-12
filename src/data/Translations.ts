@@ -9,18 +9,15 @@ i18next
         en: {
             pages: {
                 home: 'Home',
-                programming: 'Programming',
+                projects: 'Projects',
                 visuals: 'Visuals',
                 music: 'Music'
             },
             home: {
                 bio: {
-                    intro: 'Hi ! My name is Clément Hennebelle, and I\'m a programmer and artist. My works include',
-                    programming: 'programming',
-                    gamesAndWeb: '(games & web),',
-                    visuals: 'visuals',
-                    and: 'and',
-                    musicProduction: 'music production'
+                    intro: 'Hi ! My name is Clément Hennebelle, and I\'m a programmer. Check out my',
+                    projects: 'projects',
+                    here: 'here!'
                 },
                 resume: {
                     career: 'CAREER',
@@ -34,35 +31,39 @@ i18next
                     description: 'I am currently looking for a new challenge! If you think we\'d be a good fit working together, or have any questions, you can reach me here.'
                 }
             },
-            programming: {
-                faceaface: {
-                    text1: 'This project was carried out while I worked for PLAYMIND during <i>Montréal en Lumière</i> in 2019. The core gameplay loop was a timed trial during which the players had to score the highest possible score, hitting the targets on screen with foam balls.',
-                    text2: 'The game featured several power-ups, and a leaderbord which kept track of the best scores attained. The project was made on <i>Unity</i> and featured iterative gameplay life cycles.',
-                    text3: 'The setup was made on Montreal\'s <i>Place des Arts</i>, and I was responsible for maintaining the code base and making necessary gameplay adjustments on-site. The game detected the ball impacts thanks to a lazer sweeping the area in front of the screen. I was also responsible for handling the lazer\'s implementation and behaviour, which came through a C++ library.',
-                    text4: 'The final seconds of the game featured a \"frenzy mode\" where players would try and throw as many balls as possible on the goalkeeper.'
+            projects: {
+                sourceCode: 'Source code',
+                gameplayAbilities: {
+                    intro: 'An implementation of gameplay abilities within a simple game loop, with some data tracking.',
+                    text1: ''
                 },
-                playbooth: {
-                    text1: '<i>Playbooth</i> is a packaged interactive experience, relying on the interaction between several components to function.</p><p>The first iteration of the project was installed at E3 in 2019 through a partnership with <i>Bandai Namco</i> for their upcoming game <i>Man Of Medan</i>. It was an interactive experience integrated into a photobooth, where people would play through a sequence and have their picture taken during a jumpscare.</p><p>The system operated with a computer, a LED display, a camera which would take the picture, a printer which would print the picture within a frame, and a tablet which would get the user\'s information and send them the picture.',
-                    text2: 'A later iteration of the project, <i>The Last Floor</i>, would take the concept into a post-apocalyptic setting, with hordes of zombies rushing towards the users.</p><p>This project ran on <i>Unreal Engine</i> and made use of its Timeline feature.',
-                    text3: 'More information : <a href=\'https://playmind.com/products/playbooth/\' class=\"Email\">https://playmind.com/products/playbooth/</a>'
+                abilities: {
+                    intro: 'An implementation of gameplay abilities within a simple game loop, with some data tracking.',
+                    title1: 'Telekinesis Component',
+                    title2: 'Blink Component',
+                    title3: 'Data handling',
+                    title4: 'Level select',
+                    text1: 'The Telekinesis Componennt allows the player to pick up cubes, move them around and throw them. Players lose hold of the cube when it gets further than a certain angle from the aim direction.',
+                    text2: 'The Blink Component allows the player to teleport. Upon right click, the player can pick a teleport location. When the button is released, the player teleports to the chosen location. The ability supports teleporting against walls, and over ledges.',
+                    text3: 'The level end screen displays information about the level, such as how long it took to be completed, what the best completion time is, and if the level was completed without Blink, Telekinesis, or either.',
+                    text4: 'The game features a level select menu, which is automatically populated with new levels as soon as they are completed.'
                 },
-                telekinesis: {
-                    text1: 'A simple implementation of a telekinesis ability, wrapped inside an actor component. It\'s bound to Unreal Engine\'s Enhanced Input Component in <code>BeginPlay().</code>',
-                    text2: 'From there, <code>PickUpItem()</code> handles item pickup and handling, as the player moves the mouse across the screen.',
-                    text3: 'For simplicity\'s sake, I decided wether an item could be picked up or not based on if it was simulating physics. In a real game context, these objects would have their own collision channel.</p><p><code>GetPOV_Origin()</code> returns a vector with the camera\'s displacement from the actual character position.</p><p><code>ThrowItem()</code> handles throwing the held item in the aimed direction:',
-                    text4: '<code>ReleaseKey()</code> and <code>ReleaseItem()</code> handle disposing of the particle VFX and re-enabling gravity for the moved item.'
-                },
-                blink: {
-                    text1: 'An implementation of a blink ability, similar to the one in <i>Dishonored</i>. Upon initialization, we spawn the VFX directly, since its position needs to be updated every frame when deciding where to blink.',
-                    text2: '<code>PickBlinkLocation()</code> handles deciding on a suitable location to blink. First, we perform a ray cast in a straight line.',
-                    text3: 'Then, if we hit an actor (i.e. a wall or any vertical surface), we perform another raycast downwards, to see if there would be a suitable location on the ground for us.',
-                    text4: '<code>characterRadius</code> and <code>characterHalfHeight</code> provide us with the dimensions of the character\'s capsule, which is its collision\'s shape.</p><p>The origin of the downwards raycast is set half the capsule size away from the object we hit, to avoid casting into it. When we have found a suitable location, we add the character\'s half height to position them correctly.</p><p>Now, we also want to be able to teleport onto ledges we cannot see. For this, we will perform a box cast if we don\'t hit any object, to check for a ledge underneath the cast direction.',
-                    text5: 'Finally, if we found a suitable location, we display the VFX to indicate it\'s possible to blink. Upon key realease, we perform the blink.'
+                fish: {
+                    intro: 'An implementation of a fish moving using procedural animations and rendered dynamically through shaders.',
+                    title1: 'Joints',
+                    title2: 'Spine Generator',
+                    title3: 'Movement Component',
+                    title4: 'Shader',
+                    text1: 'The body of the fish is made out of joints, whose position are updated according to a bone size (vector length) which is the distance between two joints.',
+                    text2: 'The Spine Generator holds a reference to all the joints and constrains the joints\' position to a maximum angle, to avoid body distortion.',
+                    text3: 'The Movement Component defines the movement of the fish. I implemented a wander algorithm for a simple, natural looking movement.',
+                    text4: 'A sine function is applied to the movement of the head to give a natural wiggle to the movement.',
+                    text5: 'Sensors on both side of the head check for collisions with the screen border, and adjust direction based on the collision side.',
+                    text6: 'The fish\'s shader draws each element of the fish by checking if the fragment\'s position is within said element. The outline uses a Catmull-Rom spline algorithm to determine that.',
+                    text7: 'For filling the inside of the fish\'s body, we use the ray-casting method to determine if the point is within the body\'s polygon.',
+                    text8: 'We use the ellipse equation to determine if the fragment is inside a fin, and a simple radius to determine if it belongs to an eye. Then, we conditonaly draw each of the fragments.'
                 },
                 backToProjects: 'Back to projects'
-            },
-            music: {
-                description: 'is a techno & hard techno project, exploring the brutality and industrialness of a dark universe filled with frenzied melodies.'
             },
             footer: {
                 contact: 'Contact me',
@@ -72,18 +73,15 @@ i18next
         fr : {
             pages: {
                 home: 'Accueil',
-                programming: 'Programmation',
+                projects: 'Projets',
                 visuals: 'Visuels',
                 music: 'Musique'
             },
             home: {
                 bio: {
-                    intro: 'Salut ! Je m\'appelle Clément Hennebelle, et je suis un programmeur et artiste. J\'ai des projets de ',
-                    programming: 'programmation',
-                    gamesAndWeb: '(jeux & web), de',
-                    visuals: 'visuels',
-                    and: 'et de',
-                    musicProduction: 'production musicale'
+                    intro: 'Salut ! Je m\'appelle Clément Hennebelle, et je suis un programmeur. Regardez mes ',
+                    projects: 'projets',
+                    here: ' ici !'
                 },
                 resume: {
                     career: 'CARRIÈRE',
@@ -97,35 +95,35 @@ i18next
                     description: 'Je suis actuellement à la recherche d\'un nouveau défi ! Si vous pensez que nous pourrions travailler ensemble, ou si vous avez des questions, vous pouvez me contacter ici.'
                 }
             },
-            programming: {
-                faceaface: {
-                    text1: 'Ce projet a été réalisé pendant que je travaillais pour PLAYMIND lors de <i>Montréal en Lumière</i> en 2019. Le gameplay était un défi chronométré pendant lequel les joueurs devaient obtenir le score le plus élevé possible en frappant les cibles à l\'écran avec des balles en mousse.',
-                    text2: 'Le jeu comportait plusieurs power-ups et un tableau des scores qui conservait les meilleurs scores atteints. Le projet a été réalisé sur <i>Unity</i> et comportait des boucles de gameplay itératives.',
-                    text3: 'L\'installation a été faite sur la <i>Place des Arts</i> de Montréal, et j\'étais responsable de maintenir le code et d\'apporter les ajustements nécessaires au gameplay sur place, au besoin. Le jeu détectait les impacts des balles grâce à un laser balayant la zone devant l\'écran. J\'étais également responsable de la mise en œuvre et du comportement du laser, qui passait par une bibliothèque en C++.',
-                    text4: 'Les dernières secondes du jeu comportaient un "mode frénézie" où les joueurs tentaient de lancer autant de balles que possible sur le gardien.'
-                },
-                playbooth: {
-                    text1: '<i>Playbooth</i> est une expérience interactive clés en main, reposant sur l\'interaction entre plusieurs composants pour fonctionner.</p><p>La première itération du projet a été installée à l\'E3 en 2019 grâce à un partenariat avec <i>Bandai Namco</i> pour leur jeu <i>Man Of Medan</i>. C\'était une expérience interactive intégrée dans un photomaton, où les gens jouaient à une séquence et se faisaient photographier lors d\'un jumpscare.</p><p>Le système fonctionnait avec un ordinateur, un écran LED, une caméra qui prenait la photo, une imprimante qui l\'imprimait dans un cadre, et une tablette qui recueillait les informations de l\'utilisateur et leur envoyait la photo.',
-                    text2: 'Une itération ultérieure du projet, <i>The Last Floor</i>, reprenait le concept dans un cadre post-apocalyptique, avec des hordes de zombies se précipitant vers les utilisateurs.</p><p>Ce projet tournait sur <i>Unreal Engine</i> et utilisait sa fonctionnalité de séquençage.',
-                    text3: 'Plus d\'informations : <a href=\'https://playmind.com/products/playbooth/\' class=\"Email\">https://playmind.com/products/playbooth/</a>'
-                },
-                telekinesis: {
-                    text1: 'Une implémentation simple d\'une capacité de télékinésie, encapsulée dans un composant d\'acteur. Elle est liée au Enhanced Input Component d\'Unreal Engine dans <code>BeginPlay().</code>',
-                    text2: 'À partir de là, <code>PickUpItem()</code> gère le ramassage et la manipulation des objets, pendant que le joueur déplace la souris sur l\'écran.',
-                    text3: 'Pour simplifier, j\'ai décidé si un objet pouvait être ramassé ou non en fonction de s\'il simulait la physique. Dans un vrai contexte de jeu, ces objets auraient leur propre canal de collision.</p><p><code>GetPOV_Origin()</code> renvoie un vecteur avec le déplacement de la caméra par rapport à la position réelle du personnage.</p><p><code>ThrowItem()</code> gère le lancement de l\'objet tenu dans la direction visée :',
-                    text4: '<code>ReleaseKey()</code> et <code>ReleaseItem()</code> gèrent la suppression des effets VFX de particules et réactivent la gravité pour l\'objet déplacé.'
-                },
-                blink: {
-                    text1: 'Une implémentation d\'une capacité de téléportation, similaire à celle de <i>Dishonored</i>. Lors de l\'initialisation, nous instancions directement le VFX, car sa position doit être mise à jour à chaque frame lorsque le joueur choisit son lieu de téléportation.',
-                    text2: '<code>PickBlinkLocation()</code> choisit emplacement approprié pour se téléporter. Tout d\'abord, un raycast est effectué en ligne droite.',
-                    text3: 'Ensuite, si il rencontre un acteur (c\'est-à-dire un mur ou une surface verticale), un autre raycast est effectué vers le bas, pour voir s\'il y a un emplacement approprié sur le sol pour le joueur.',
-                    text4: '<code>characterRadius</code> et <code>characterHalfHeight</code> nous fournissent les dimensions de la capsule du personnage, qui est la forme de sa collision.</p><p>L\'origine du raycast vers le bas est placée à la moitié de la taille de la capsule, à distance de l\'objet heurté, pour éviter de détecter une collision avec celui-ci. Lorsque nous trouvons un emplacement approprié, nous ajoutons la moitié de la taille du personnage pour le positionner correctement.</p><p>Nous voulons également pouvoir nous téléporter sur des rebords que nous ne pouvons pas voir. Pour cela, nous effectuons un boxcast si nous ne heurtons aucun objet, pour vérifier s\'il y a un rebord sous la direction du lancer.',
-                    text5: 'Enfin, si nous trouvons un emplacement approprié, nous affichons le VFX pour indiquons qu\'une téléportation est possible. Lorsque la touche est relâchée, nous effectuons la téléportation.'
+            projects: {
+                sourceCode: 'Code source',
+                abilities: {
+                    intro: "Une implémentation de capacités gameplay dans une boucle de jeu simple, avec un suivi de certaines données.",
+                    title1: 'Telekinesis Component',
+                    title2: 'Blink Component',
+                    title3: 'Gestion des données',
+                    title4: 'Sélection des niveaux',
+                    text1: "Le Telekinesis Component permet au joueur de saisir des cubes, de les déplacer et de les lancer. Le joueur perd le contrôle du cube lorsqu'il dépasse un certain angle par rapport à la direction visée.",
+                    text2: "Le Blink Component permet au joueur de se téléporter. En cliquant droit, le joueur peut choisir un lieu de téléportation. Lorsque le bouton est relâché, le joueur se téléporte à l'endroit choisi. Cette capacité permet de se téléporter contre des murs et au-dessus de rebords.",
+                    text3: "L'écran de fin de niveau affiche des informations sur le niveau, comme le temps écoulé, le meilleur temps réalisé, et si le niveau a été complété sans utiliser la téléportation, la télékinésie, ou aucun des deux.",
+                    text4: "Le jeu dispose d'un menu de sélection de niveau, qui se remplit automatiquement avec les nouveaux niveaux dès qu'ils sont terminés."
+                  },
+                fish: {
+                    intro: "Une implémentation d'un poisson se déplaçant grâce à des animations procédurales et affiché dynamiquement via des shaders.",
+                    title1: 'Joints',
+                    title2: 'Spine Generator',
+                    title3: 'Movement Component',
+                    title4: 'Shader',
+                    text1: "Le corps du poisson est composé d'articulations, dont la position est mise à jour en fonction de la taille de l'os (longueur du vecteur), qui est la distance entre deux articulations.",
+                    text2: "Spine Generator contient une référence à toutes les articulations et contraint leur position à un angle maximal pour éviter la distorsion du corps.",
+                    text3: "Movement Component gère le déplacement du poisson. J'ai implémenté un algorithme de Wander pour un mouvement simple et naturel.",
+                    text4: "Une fonction sinusoïdale est appliquée au mouvement de la tête pour donner une ondulation naturelle.",
+                    text5: "Des capteurs de chaque côté de la tête détectent les collisions avec les bords de l'écran et ajustent la direction en fonction du côté de la collision.",
+                    text6: "Le shader du poisson dessine chaque élément en vérifiant si la position du fragment se trouve dans cet élément. Le contour utilise un algorithme de spline Catmull-Rom pour le déterminer.",
+                    text7: "Pour remplir l'intérieur du corps du poisson, nous utilisons un algorithme de raycasting pour vérifier si le point se trouve dans le polygone du corps.",
+                    text8: "Nous utilisons l'équation de l'ellipse pour déterminer si le fragment se trouve dans une nageoire, et un simple rayon pour déterminer s'il appartient à un œil. Ensuite, nous dessinons chacun des fragments en fonction des résultats."
                 },
                 backToProjects: 'Retour aux projets'
-            }, 
-            music: {
-                description: 'est un projet de techno & hard techno explorant la brutalité et l\'industrialité d\'un univers sombre, empli de mélodies frénétiques.'
             },
             footer: {
                 contact: 'Contactez-moi',

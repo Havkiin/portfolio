@@ -11619,6 +11619,14 @@ snake-case@^3.0.4:
     dot-case "^3.0.4"
     tslib "^2.0.3"
 
+sorting-algorithm-visualizer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sorting-algorithm-visualizer/-/sorting-algorithm-visualizer-1.0.0.tgz#5d4e675ea249f7d3b7420622cfd5d6a363947117"
+  integrity sha512-iR+kZz7Vkdrylez0ic3okKGGPFWYbuM/5QmSD5qCFWTORmjtRJOZJ2ryVhuOMkBl24hwqy4q98W2qX1QogDpQw==
+  dependencies:
+    react "^18.3.1"
+    react-dom "^18.3.1"
+
 "source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.0.tgz"

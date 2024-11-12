@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import headshot from '/headshot.jpg';
 import { Link } from 'react-router-dom';
-import { Routes } from '../data/Data';
+import { RouteEnums } from '../data/Data';
 import { resume, ResumeItem } from '../data/Data';
 import AppFooter from '../components/AppFooter';
 import '../styles/App.css';
-import '../styles/Home.css';
+import '../styles/HomePage.css';
 import AppHeader from '../components/AppHeader';
 import i18next from '../data/Translations';
 
@@ -55,7 +55,7 @@ function HomePage () {
             </div>
             <div className="BioRoot">
               <p className="BioContent">
-                {i18next.t('home:bio:intro')} <Link to={Routes.programming} className="textLink orange">{i18next.t('home:bio:programming')}</Link> {i18next.t('home:bio:gamesAndWeb')} <Link to={Routes.visuals} className="textLink orange">{i18next.t('home:bio:visuals')}</Link>, {i18next.t('home:bio:and')} <Link to={Routes.music} className="textLink orange">{i18next.t('home:bio:musicProduction')}</Link>.
+                {i18next.t('home:bio:intro')} <Link to={RouteEnums.projects} className="textLink orange">{i18next.t('home:bio:projects')}</Link> {i18next.t('home:bio:here')}
               </p>
             </div>
           </div>
