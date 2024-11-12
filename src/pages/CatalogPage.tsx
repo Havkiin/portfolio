@@ -3,13 +3,14 @@ import AppHeader from '../components/AppHeader';
 import AppFooter from '../components/AppFooter';
 import { ProgrammingProjectType, programmingProjects } from '../data/Data';
 import '../styles/CatalogPage.css';
+import { projectNameToURL } from '../utils/utils';
 
 function Projects ({ projects } : { projects : ProgrammingProjectType[] }) {
   return (
     <div className = "ProjectMosaicContainer">
       {projects.map((project) => (
         <div className="ProjectMosaicElement" key = {project.id}>
-          <a href = {`/programming/${project.name}`}>
+          <a href = {`/projects/${projectNameToURL(project.name)}`}>
           <span className = "ProjectMosaicTitle">{project.name}</span>
           <div className = "ProjectMosaicSquare" key={project.id}>
               <img

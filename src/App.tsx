@@ -5,11 +5,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProjectPage from './pages/ProjectPage.tsx';
 import { programmingProjects, RouteEnums } from './data/Data';
 import './styles/App.css';
+import { projectNameToURL } from './utils/utils.ts';
 
 function App () {
   const projectPages = programmingProjects.map((p, i) => {
+    const pathName = projectNameToURL(p.name);
+
     return ({
-      path: `/programming/${p.name.toLowerCase()}`,
+      path: `/projects/${pathName}`,
       element: <ProjectPage project={programmingProjects[i]}/>,
     })
   });
