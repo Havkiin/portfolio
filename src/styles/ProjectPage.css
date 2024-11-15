@@ -110,6 +110,6 @@
 
 .BackButton:hover {
     background-color: white;
-    color: #fc9153;
-    border: solid 2px #fc9153;
+    color: var(--orange);
+    border: solid 2px var(--orange);
 }

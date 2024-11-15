@@ -26,7 +26,7 @@ function DisplayResumeItems({ items } : { items : ResumeItem[] }) {
                 </a>
               </div>
               <div className = "ResumeSquareTitleRoot">
-                <span className = "ResumeSquareTitle">{item.title}</span>
+                <span className = "ResumeSquareTitle">{i18next.t(item.title)}</span>
                 <span className = "ResumeSquareTitle">{item.years}</span>
               </div>
             </div>
@@ -60,11 +60,11 @@ function HomePage () {
             </div>
           </div>
         </div>
-        <div className = "ScrollPage lightgrey-background">
+        <div className = "ScrollPage">
           <h1 className = "ResumeTitle Roboto orange">{i18next.t('home:resume:career')}</h1>
           <DisplayResumeItems items = {resume} />
         </div>
-        <div className = "ScrollPage lightergrey-background">
+        <div className = "ScrollPage">
           <h1 className = "ResumeTitle Roboto orange">{i18next.t('home:contact:hi')} :)</h1>
           <div className = "ContactContainer greywhite">
             <p>{i18next.t('home:contact:description')}</p>

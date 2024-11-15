@@ -21,10 +21,22 @@ i18next
                 },
                 resume: {
                     career: 'CAREER',
-                    concordia: '• Learned the basics of programming & computer science\n• Specialized in Computer Games',
-                    playmind: '• Experience with Unity 3D (C#)\n• Worked on developping and maintaining numerical installations & game projects\n• Learned how to iterate rapidly upon client feedback, and handle issues when projects are live',
-                    behaviour: '• Worked on an unreleased Stadia project\n• Experience with Unreal Engine\'s Gameplay Ability System (C++ and Blueprint)\n• Experience with multiplayer gameplay through Unreal Engine\'s Replication system',
-                    udem: '• Created multiple projects and performances with TouchDesigner, Ableton Live, Wwise\n• Expanded my creative abilities through the exploration of sound and sound systems'
+                    concordia: {
+                        title: 'Bachelor\'s Degree\nComputer Science',
+                        description: '• Learned the basics of programming & computer science\n• Specialized in Computer Games'
+                    },
+                    playmind: {
+                        title: 'Gameplay & Systems\nProgrammer',
+                        description: '• Experience with Unity 3D (C#)\n• Worked on developping and maintaining numerical installations & game projects\n• Learned how to iterate rapidly upon client feedback, and handle issues when projects are live'
+                    },
+                    behaviour: {
+                        title: 'Gameplay\nProgrammer',
+                        description: '• Worked on an unreleased Stadia project\n• Experience with Unreal Engine\'s Gameplay Ability System (C++ and Blueprint)\n• Experience with multiplayer gameplay through Unreal Engine\'s Replication system'
+                    },
+                    udem: {
+                        title: 'Major\nDigital Music',
+                        description: '• Created multiple projects and performances with TouchDesigner, Ableton Live, Wwise\n• Expanded my creative abilities through the exploration of sound and sound systems'
+                    }
                 },
                 contact: {
                     hi: 'SAY HI',
@@ -85,10 +97,22 @@ i18next
                 },
                 resume: {
                     career: 'CARRIÈRE',
-                    concordia: '• Apprentissage des bases de la programmation et de l\'informatique\n• Spécialisation en jeux vidéo',
-                    playmind: '• Expérience avec Unity 3D (C#)\n• Développer et maintenir des projets d\'installation numériques & de jeux\n• Itération rapide suivant les retours des clients, et gestion des problèmes techniques quand les projets sont installés',
-                    behaviour: '• Travail sur un projet Stadia non publié\n• Expérience avec le Gameplay Ability System d\'Unreal Engine (C++ et Blueprint)\n• Expérience avec du gameplay multijoueur au travers du sytème de réplication d\'Unreal Engine',
-                    udem: '• Création de multiples projets et performances avec TouchDesigner, Ableton Live, Wwise\n• Exploration de mes capacités créatives au travers de l\'exploration des sons et des systèmes sonores'
+                    concordia: {
+                        title: 'Baccalauréat\nInformatique',
+                        description: '• Apprentissage des bases de la programmation et de l\'informatique\n• Spécialisation en jeux vidéo'
+                    },
+                    playmind: {
+                        title: 'Programmeur\nGameplay & Systèmes',
+                        description: '• Expérience avec Unity 3D (C#)\n• Développer et maintenir des projets d\'installation numériques & de jeux\n• Itération rapide suivant les retours des clients, et gestion des problèmes techniques quand les projets sont installés'
+                    },
+                    behaviour: {
+                        title: 'Programmeur\nGameplay',
+                        description: '• Travail sur un projet Stadia non publié\n• Expérience avec le Gameplay Ability System d\'Unreal Engine (C++ et Blueprint)\n• Expérience avec du gameplay multijoueur au travers du sytème de réplication d\'Unreal Engine'
+                    },
+                    udem: {
+                        title: 'Majeure\nMusiques Numériques',
+                        description: '• Création de multiples projets et performances avec TouchDesigner, Ableton Live, Wwise\n• Exploration de mes capacités créatives au travers de l\'exploration des sons et des systèmes sonores'
+                    }
                 },
                 contact: {
                     hi: 'DITES BONJOUR',

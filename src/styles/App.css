@@ -7,14 +7,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black: #212121;
+  --onyx: #3B3B3B;
+  --grey: #6B6B6B;
+  --white: #EEE;
+  --darker-white: #E0E0E0;
+  --darkest-white: #C9C9C9;
+  --orange: #E77935;
+  --blue: #5BC0EB;
+  --red: red;
+}
+
 .BioRoot {
   width: 50vw;
   align-items: center;
 }
 
 .App {
-  background-color: #212121;
-  color: #f2f2f2;
+  background-color: var(--black);
+  color: var(--white);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,11 +101,11 @@
 }
 
 .orange {
-  color: #fc9153;
+  color: var(--orange);
 }
 
 .orange::before {
-  background-color: #fc9153;
+  background-color: var(--orange);
 }
 
 .greywhite {
@@ -109,11 +121,11 @@
 }
 
 .lightgrey-background {
-  background-color: #242424;
+  background-color: var(--onyx);
 }
 
 .lightergrey-background {
-  background-color: #282828;
+  background-color: var(--grey);
 }
 
 .Content {

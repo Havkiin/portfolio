@@ -200,29 +200,29 @@ export const resume : ResumeItem[] = [
     {
         image: '/Concordia_logo.svg',
         link: 'https://www.concordia.ca',
-        title: 'Bachelor\'s Degree\nComputer Science',
+        title: 'home:resume:concordia:title',
         years: '2014 - 2018',
-        description: 'home:resume:concordia'
+        description: 'home:resume:concordia:description'
     },
     {
         image: '/Playmind_logo.png',
         link: 'http://playmind.com/',
-        title: 'Gameplay & Systems\nProgrammer',
+        title: 'home:resume:playmind:title',
         years: '2018 - 2019',
-        description: 'home:resume:playmind'
+        description: 'home:resume:playmind:description'
     },
     {
         image: '/Behaviour_logo.svg',
         link: 'https://www.bhvr.com/',
-        title: 'Gameplay\nProgrammer',
+        title: 'home:resume:behaviour:title',
         years: '2019 - 2020',
-        description: 'home:resume:behaviour'
+        description: 'home:resume:behaviour:description'
     },
     {
         image: '/Udem_logo.svg',
         link: 'https://www.umontreal.ca/',
-        title: 'Major\nDigital Music',
+        title: 'home:resume:udem:title',
         years: '2021 - 2024',
-        description: 'home:resume:udem'
+        description: 'home:resume:udem:description'
     }
 ]
