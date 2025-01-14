@@ -119,10 +119,6 @@
     cursor: pointer;
 }
 
-/* .ToProjects > * {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-} */
-
 .ToProjectsArrow {
     transform-origin: center top;
     transform: scaleY(0);

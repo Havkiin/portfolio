@@ -306,6 +306,13 @@
         left: 20%;
     }
 
+    .ProjectImageShadow2 {
+        width: 65%;
+        height: 45%;
+        top: 27%;
+        left: 20%;
+    }
+
     .toBannerShadow {
         pointer-events: none;
     }

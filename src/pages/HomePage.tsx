@@ -145,6 +145,7 @@ const HomePage : React.FC = () => {
     bannerShadowRef : React.RefObject<HTMLDivElement>,
     nameRef : React.RefObject<HTMLDivElement>
   ) => {
+    console.log('here we gogogo');
     scrollToSection(projectsSectionRef, 300)
       .then(() => dissolveElements(bannerRef, nameRef))
       .then(() => changeLayout(bannerRef, bannerShadowRef))
@@ -325,7 +326,7 @@ const HomePage : React.FC = () => {
               <rect x='0' y='0' width='100%' height='100%' fill='black' opacity='100%' />
             </svg>
           </div>
-          <div className={"ProjectImageShadow2" + (navigationType === 'in-app' ? ' opacity-zero' : (visibleItems[1] ? ' scaleY-down' : ''))}>
+          <div className={"ProjectImageShadow2" + (navigationType === 'in-app' ? ' hidden' : (visibleItems[1] ? ' scaleY-down' : ''))}>
            <svg xmlns="http://www.w3.org/2000/svg" width='100%' height='100%'>
               <rect x='0' y='0' width='100%' height='100%' fill='black' opacity='100%' />
             </svg>

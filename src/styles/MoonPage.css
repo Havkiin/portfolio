@@ -24,7 +24,7 @@
     background-size: fill;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('Moon2.svg');
+    background-image: url('public/Moon2.svg');
     filter: drop-shadow( 0px 0px 25px rgba(255, 255, 255, 0.7));
 }
 
@@ -42,12 +42,12 @@
 } */
 
 .Stars1 {
-    background-image: url('Stars1.svg');
+    background-image: url('public/Stars1.svg');
     filter: drop-shadow( 0px 0px 1px rgba(255, 255, 255, 0.7));
 }
 
 .Stars2 {
-    background-image: url('Stars2.svg');
+    background-image: url('public/Stars2.svg');
     filter: drop-shadow( 0px 0px 1px rgba(255, 255, 255, 0.7));
 }
 
