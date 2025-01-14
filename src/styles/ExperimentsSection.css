@@ -1,0 +1,74 @@
+.Experiments {
+    height: 120vh;
+    background-color: var(--antique-white);
+    color: var(--isabelline);
+}
+
+.ExperimentsContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    width: 80%;
+    height: 50%;
+    top: 20%;
+    left: 10%;
+}
+
+.Experiment {
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background-image: url('/MoonCycle.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px black solid;
+    cursor: pointer;
+}
+
+.ExperimentShadow {
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    transform-origin: center top;
+    overflow: hidden;
+    position: absolute;
+}
+
+.Experiment:hover .ExperimentCover {
+    opacity: 80%;
+    transition: opacity 0.3s ease;
+}
+
+.ExperimentCover {
+    height: 100%;
+    width: 100%;
+    font-size: min(2vw, 3vh);
+    text-align: center;
+    align-content: center;
+    background-color: black;
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.Skills {
+    height: 50vh;
+}
+
+@media (orientation: portrait) {
+    .Experiments {
+        height: 50vh;
+    }
+
+    .ExperimentsContainer {
+        top: 30%;
+    }
+
+    .Experiment {
+        width: 100%;
+        height: 100%;
+        background-position: top;
+    }
+}

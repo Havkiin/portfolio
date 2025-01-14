@@ -1,0 +1,479 @@
+:root {
+    --kobicha: #643D16;
+    --sienna: #7C341C;
+    --bronze: #BC8033;
+    --dun: #D8C9B3;
+    --gunmetal: #1F2B2E;
+    --night: #101617;
+    --eggshell: #F0EAD6;
+}
+
+body {
+    background-color: var(--eggshell);
+    color: var(--eggshell);
+}
+
+.gunmetal-background {
+    background-color: var(--gunmetal);
+}
+
+.bronze {
+    color: var(--bronze);
+}
+
+.dun {
+    color: var(--dun);
+}
+
+.YisstCurtain {
+    background-color: var(--night);
+}
+
+.IntroProject {
+    grid-template-rows: 80% 19% 1%;
+    height: 100vh;
+    color: var(--isabelline);
+}
+
+.Intro > svg rect {
+    transform: scaleX(0);
+}
+
+@keyframes slide-in {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.slide-in {
+    transform: scaleX(0);
+    animation: slide-in 0.2s linear forwards 0.8s;
+}
+
+@keyframes slide-out {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+.slide-out {
+    animation: slide-out 0.2s linear forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 0.5s linear forwards 0.5s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.7s linear forwards 0.5s;
+}
+
+.Banner {
+    position: relative;
+    background-image: url('/Yisst.png');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+}
+
+.Banner a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ProjectBannerTitle {
+    font-size: min(7vw, 10vh);
+}
+
+.ArrowSVG:hover circle {
+    stroke-dashoffset: 0;
+    visibility: visible;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.ArrowSVG circle {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    visibility: hidden;
+}
+
+.BannerShadow {
+    width: 100%;
+    height: 100%;
+}
+
+.ProjectPageName {
+    display: flex;  
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    z-index: 2;
+}
+
+.ProjectInfo {
+    width: 50%;
+    height: 7%;
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: min(1.5vw, 2.25vh);
+}
+
+.ProjectInfo span span {
+    margin: 0 0.5vw 0 0.5vw;
+}
+
+.ToWebsite {
+    display: grid;
+}
+
+.ToWebsite a {
+    width: 10%;
+    height: 30%;
+    justify-self: center;
+    align-self: center;
+}
+
+.WebsiteButton {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--bronze);
+    color: var(--isabelline);
+    font-size: min(1.5vw, 2.25vh);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.WebsiteButton:hover {
+    transform: translateY(-10%);
+    transition: transform 0.3s ease;
+}
+
+.Section .TitleProjectPage {
+    align-self: center;
+    font-size: min(5vw, 7.5vh);
+}
+
+.Section .Content {
+    width: 90%;
+    font-size: min(2vw, 3vh);
+}
+
+.Context {
+    height: 45vh;
+}
+
+.Context div {
+    justify-self: center;
+}
+
+.Design {
+    height: 100vh;
+    color: black;
+    grid-template-rows: 25% 35% 40%;
+}
+
+.Design div {
+    justify-self: center;
+}
+
+.DesignColors {
+    width: 80%;
+    height: 100%;
+}
+
+.ColorContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+}
+
+.ColorItem {
+    width: 60%;
+    display: grid;
+}
+
+.ColorItem div {
+    display: grid;
+}
+
+.ColorItem > *, .ColorItem div > * {
+    justify-self: center;
+}
+
+.ColorItem svg circle {
+    filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0, .7));
+}
+
+.ColorItem p {
+    font-size: min(1.5vw, 2.25vh);
+    color: grey;
+}
+
+.DesignFonts {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+}
+
+.DesignFonts div {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.DesignFonts div p {
+    justify-self: center;
+    align-self: center;
+    font-size: min(4vw, 6vh);
+}
+
+.Tech {
+    height: 40vh;
+}
+
+.Tech div {
+    justify-self: center;
+}
+
+.Screenshots {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.Screenshots > * {
+    width: auto;
+    position: absolute;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+}
+
+.Desktop {
+    height: 40vh;
+}
+
+.Mobile {
+    height: 30vh;
+}
+
+.ScreenshotHome.Desktop {
+    margin: 25vh 0 0 2vw; 
+}
+
+.ScreenshotDrinks.Mobile {
+    margin: 45vh 0 0 30vw;
+}
+
+.ScreenshotDrinks.Desktop {
+    margin: 20vh 0 0 32vw
+}
+
+.ScreenshotEvents.Desktop {
+    margin: 44vh 0 0 42vw;
+}
+
+.ScreenshotBooking.Desktop {
+    margin: 27vh 0 0 62vw;
+}
+
+.ScreenshotBooking.Mobile {
+    margin: 57vh 0 0 72vw;
+}
+
+.Back {
+    height: 15vh;
+    font-size: min(4vw, 6vh);
+    color: var(--dun);
+}
+
+.Back a {
+    position: relative;
+    text-decoration: none;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    width: 20%;
+}
+
+.BackLink {
+    display: flex;
+    height: 50%;
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.BackLink svg {
+    transition: transform ease 0.3s;
+}
+
+.BackLinkText {
+    position: relative;
+}
+
+.BackLinkText p {
+    margin: 0;
+}
+
+.BackLink:hover svg {
+    transform: translateX(-10%);
+    transition: transform ease 0.3s;
+}
+
+.BackLink:hover .BackLinkText::before {
+    transform: scaleX(1);
+    height: 3px;
+}
+
+.BackLink:hover .BackLinkText::before {
+    transition: transform 0.3s ease;
+}
+
+.BackLinkText::before  {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dun);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.BackLinkText::before {
+    transform-origin: top left;
+}
+
+@media (orientation: portrait) {
+    .App {
+        height: 295vh;
+    }
+
+    .IntroProject {
+        height: 65vh;
+    }
+
+    .ProjectBannerTitle {
+        font-size: 9rem;
+    }
+
+    .ProjectInfo {
+        font-size: 2rem;
+        width: 80%;
+        padding-bottom: 1vh;
+    }
+
+    .ToWebsite a {
+        width: 20%;
+        height: 35%;
+    }
+
+    .WebsiteButton {
+        font-size: 1.5rem;
+    }
+
+    .ToWebsite ~ svg {
+        width: 80%;
+        justify-self: center;
+    }
+
+    .Context {
+        height: 35vh;
+    }
+
+    .Design {
+        height: 50vh;
+    }
+
+    .ColorItem p {
+        font-size: 1.5rem;
+    }
+
+    .Tech {
+        height: 35vh;
+    }
+
+    .Section .Content {
+        font-size: 2rem;
+    }
+
+    .Back {
+        height: 10vh;
+    }
+
+    .BackLink {
+        width: 30%;
+    }
+
+    .BackLinkText {
+        align-self: center;
+    }
+
+    .Desktop {
+        height: 30vh;   
+    }
+
+    .ScreenshotHome.Desktop {
+        margin: 20vh 0 0 2vw; 
+    }
+    
+    .ScreenshotDrinks.Mobile {
+        margin: 55vh 0 0 5vw;
+    }
+    
+    .ScreenshotDrinks.Desktop {
+        margin: 10vh 0 0 12vw
+    }
+    
+    .ScreenshotEvents.Desktop {
+        margin: 49vh 0 0 14vw;
+    }
+    
+    .ScreenshotBooking.Desktop {
+        margin: 32vh 0 0 10vw;
+    }
+    
+    .ScreenshotBooking.Mobile {
+        margin: 62vh 0 0 60vw;
+    }
+}

@@ -7,151 +7,137 @@ i18next
     fallbackLng: 'en',
     resources: {
         en: {
-            pages: {
-                home: 'Home',
-                projects: 'Projects',
-                visuals: 'Visuals',
-                music: 'Music'
-            },
-            home: {
-                bio: {
-                    intro: 'Hi ! My name is Clément Hennebelle, and I\'m a programmer. Check out my',
-                    projects: 'projects',
-                    here: 'here!'
-                },
-                resume: {
-                    career: 'CAREER',
-                    concordia: {
-                        title: 'Bachelor\'s Degree\nComputer Science',
-                        description: '• Learned the basics of programming & computer science\n• Specialized in Computer Games'
-                    },
-                    playmind: {
-                        title: 'Gameplay & Systems\nProgrammer',
-                        description: '• Experience with Unity 3D (C#)\n• Worked on developping and maintaining numerical installations & game projects\n• Learned how to iterate rapidly upon client feedback, and handle issues when projects are live'
-                    },
-                    behaviour: {
-                        title: 'Gameplay\nProgrammer',
-                        description: '• Worked on an unreleased Stadia project\n• Experience with Unreal Engine\'s Gameplay Ability System (C++ and Blueprint)\n• Experience with multiplayer gameplay through Unreal Engine\'s Replication system'
-                    },
-                    udem: {
-                        title: 'Major\nDigital Music',
-                        description: '• Created multiple projects and performances with TouchDesigner, Ableton Live, Wwise\n• Expanded my creative abilities through the exploration of sound and sound systems'
-                    }
-                },
-                contact: {
-                    hi: 'SAY HI',
-                    description: 'I am currently looking for a new challenge! If you think we\'d be a good fit working together, or have any questions, you can reach me here.'
-                }
+            sections: {
+                projects: "Projects",
+                experiments: "Experiments",
+                about: "About",
+                lang: "EN"
             },
             projects: {
-                sourceCode: 'Source code',
-                gameplayAbilities: {
-                    intro: 'An implementation of gameplay abilities within a simple game loop, with some data tracking.',
-                    text1: ''
-                },
-                abilities: {
-                    intro: 'An implementation of gameplay abilities within a simple game loop, with some data tracking.',
-                    title1: 'Telekinesis Component',
-                    title2: 'Blink Component',
-                    title3: 'Data handling',
-                    title4: 'Level select',
-                    text1: 'The Telekinesis Componennt allows the player to pick up cubes, move them around and throw them. Players lose hold of the cube when it gets further than a certain angle from the aim direction.',
-                    text2: 'The Blink Component allows the player to teleport. Upon right click, the player can pick a teleport location. When the button is released, the player teleports to the chosen location. The ability supports teleporting against walls, and over ledges.',
-                    text3: 'The level end screen displays information about the level, such as how long it took to be completed, what the best completion time is, and if the level was completed without Blink, Telekinesis, or either.',
-                    text4: 'The game features a level select menu, which is automatically populated with new levels as soon as they are completed.'
-                },
-                fish: {
-                    intro: 'An implementation of a fish moving using procedural animations and rendered dynamically through shaders.',
-                    title1: 'Joints',
-                    title2: 'Spine Generator',
-                    title3: 'Movement Component',
-                    title4: 'Shader',
-                    text1: 'The body of the fish is made out of joints, whose position are updated according to a bone size (vector length) which is the distance between two joints.',
-                    text2: 'The Spine Generator holds a reference to all the joints and constrains the joints\' position to a maximum angle, to avoid body distortion.',
-                    text3: 'The Movement Component defines the movement of the fish. I implemented a wander algorithm for a simple, natural looking movement.',
-                    text4: 'A sine function is applied to the movement of the head to give a natural wiggle to the movement.',
-                    text5: 'Sensors on both side of the head check for collisions with the screen border, and adjust direction based on the collision side.',
-                    text6: 'The fish\'s shader draws each element of the fish by checking if the fragment\'s position is within said element. The outline uses a Catmull-Rom spline algorithm to determine that.',
-                    text7: 'For filling the inside of the fish\'s body, we use the ray-casting method to determine if the point is within the body\'s polygon.',
-                    text8: 'We use the ellipse equation to determine if the fragment is inside a fin, and a simple radius to determine if it belongs to an eye. Then, we conditonaly draw each of the fragments.'
-                },
-                backToProjects: 'Back to projects'
+                yisst: {
+                    subtitle: "Local Neighborhood Pub",
+                    description: "Lively local bar on a mission to provide only the best local products.",
+                    seeMore: "See more",
+                    role: "Role",
+                    roleContent: "UX Design & Programming",
+                    date: "Date",
+                    visitWebsite: "Visit Website",
+                    context: "Context",
+                    contextContent: "Yisst wanted a full redesign of their website, to showcase their products and their mission to the clients. The pub doesnt have any paper menus, so making the menu clear and accessible to everyone was my top priority.",
+                    design: "Design",
+                    colors: {
+                        kobicha: "Kobicha",
+                        sienna: "Sienna",
+                        bronze: "Bronze",
+                        dune: "Dune",
+                        gunmetal: "Gunmetal"
+                    },
+                    tech: "Tech",
+                    techContent: "The main challenge with Yisst was providing a way to keep the menu dynamic, as new beers come in almost every day. I provided an internal menu linked to a database so that the staff was able to change the items easily. The integration was made using Wix as a CMS.",
+                    back: "Back"
+                }
             },
-            footer: {
-                contact: 'Contact me',
-                resume: 'Download my resume'
+            experiments: {
+                experiments: "Experiments",
+                moonPhases: {
+                    moonPhases: "Moon Phases",
+                    newMoon: "New Moon",
+                    waxingCrescent: "Waxing Crescent",
+                    firstQuarter: "First Quarter",
+                    waxingGibbous: "Waxing Gibbous",
+                    fullMoon: "Full Moon",
+                    waningGibbous: "Waning Gibbous",
+                    lastQuarter: "Last Quarter",
+                    waningCrescent: "Waning Crescent",
+                    nextFullMoon: "Next full moon on "
+                }
+            },
+            about: {
+                aboutMe: "About me.",
+                description1: "Im a creative programmer who makes websites and web applications, as well as some exploration in computer graphics.",
+                description2: "I have a background in the video games industry where I spent a couple years building interactive fun.",
+                description3: "I studied Computer Science and Digital Music, curious to learn more about my craft and the many ways to combine my love for technology and creativity.",
+                description4: "I am currently looking for work and available for contracts."
+            },
+            contact: {
+                letsTalk: "Lets talk.",
+                questionProjects: "Question? Projects? Just want to meet up?",
+                name: "Name*",
+                email: "Email*",
+                message: "Message*",
+                send: "Send",
+                messageSent1: "Your message was sent!",
+                messageSent2: "Ill get back to you as soon as possible."
+            },
+            general: {
+                backToTop: "BACK TO TOP"
             }
         },
         fr : {
-            pages: {
-                home: 'Accueil',
-                projects: 'Projets',
-                visuals: 'Visuels',
-                music: 'Musique'
-            },
-            home: {
-                bio: {
-                    intro: 'Salut ! Je m\'appelle Clément Hennebelle, et je suis un programmeur. Regardez mes ',
-                    projects: 'projets',
-                    here: ' ici !'
-                },
-                resume: {
-                    career: 'CARRIÈRE',
-                    concordia: {
-                        title: 'Baccalauréat\nInformatique',
-                        description: '• Apprentissage des bases de la programmation et de l\'informatique\n• Spécialisation en jeux vidéo'
-                    },
-                    playmind: {
-                        title: 'Programmeur\nGameplay & Systèmes',
-                        description: '• Expérience avec Unity 3D (C#)\n• Développer et maintenir des projets d\'installation numériques & de jeux\n• Itération rapide suivant les retours des clients, et gestion des problèmes techniques quand les projets sont installés'
-                    },
-                    behaviour: {
-                        title: 'Programmeur\nGameplay',
-                        description: '• Travail sur un projet Stadia non publié\n• Expérience avec le Gameplay Ability System d\'Unreal Engine (C++ et Blueprint)\n• Expérience avec du gameplay multijoueur au travers du sytème de réplication d\'Unreal Engine'
-                    },
-                    udem: {
-                        title: 'Majeure\nMusiques Numériques',
-                        description: '• Création de multiples projets et performances avec TouchDesigner, Ableton Live, Wwise\n• Exploration de mes capacités créatives au travers de l\'exploration des sons et des systèmes sonores'
-                    }
-                },
-                contact: {
-                    hi: 'DITES BONJOUR',
-                    description: 'Je suis actuellement à la recherche d\'un nouveau défi ! Si vous pensez que nous pourrions travailler ensemble, ou si vous avez des questions, vous pouvez me contacter ici.'
-                }
+            sections: {
+                projects: "Projets",
+                experiments: "Expériences",
+                about: "À propos",
+                lang: "FR"
             },
             projects: {
-                sourceCode: 'Code source',
-                abilities: {
-                    intro: "Une implémentation de capacités gameplay dans une boucle de jeu simple, avec un suivi de certaines données.",
-                    title1: 'Telekinesis Component',
-                    title2: 'Blink Component',
-                    title3: 'Gestion des données',
-                    title4: 'Sélection des niveaux',
-                    text1: "Le Telekinesis Component permet au joueur de saisir des cubes, de les déplacer et de les lancer. Le joueur perd le contrôle du cube lorsqu'il dépasse un certain angle par rapport à la direction visée.",
-                    text2: "Le Blink Component permet au joueur de se téléporter. En cliquant droit, le joueur peut choisir un lieu de téléportation. Lorsque le bouton est relâché, le joueur se téléporte à l'endroit choisi. Cette capacité permet de se téléporter contre des murs et au-dessus de rebords.",
-                    text3: "L'écran de fin de niveau affiche des informations sur le niveau, comme le temps écoulé, le meilleur temps réalisé, et si le niveau a été complété sans utiliser la téléportation, la télékinésie, ou aucun des deux.",
-                    text4: "Le jeu dispose d'un menu de sélection de niveau, qui se remplit automatiquement avec les nouveaux niveaux dès qu'ils sont terminés."
-                  },
-                fish: {
-                    intro: "Une implémentation d'un poisson se déplaçant grâce à des animations procédurales et affiché dynamiquement via des shaders.",
-                    title1: 'Joints',
-                    title2: 'Spine Generator',
-                    title3: 'Movement Component',
-                    title4: 'Shader',
-                    text1: "Le corps du poisson est composé d'articulations, dont la position est mise à jour en fonction de la taille de l'os (longueur du vecteur), qui est la distance entre deux articulations.",
-                    text2: "Spine Generator contient une référence à toutes les articulations et contraint leur position à un angle maximal pour éviter la distorsion du corps.",
-                    text3: "Movement Component gère le déplacement du poisson. J'ai implémenté un algorithme de Wander pour un mouvement simple et naturel.",
-                    text4: "Une fonction sinusoïdale est appliquée au mouvement de la tête pour donner une ondulation naturelle.",
-                    text5: "Des capteurs de chaque côté de la tête détectent les collisions avec les bords de l'écran et ajustent la direction en fonction du côté de la collision.",
-                    text6: "Le shader du poisson dessine chaque élément en vérifiant si la position du fragment se trouve dans cet élément. Le contour utilise un algorithme de spline Catmull-Rom pour le déterminer.",
-                    text7: "Pour remplir l'intérieur du corps du poisson, nous utilisons un algorithme de raycasting pour vérifier si le point se trouve dans le polygone du corps.",
-                    text8: "Nous utilisons l'équation de l'ellipse pour déterminer si le fragment se trouve dans une nageoire, et un simple rayon pour déterminer s'il appartient à un œil. Ensuite, nous dessinons chacun des fragments en fonction des résultats."
-                },
-                backToProjects: 'Retour aux projets'
+                yisst: {
+                    subtitle: "Pub de quartier local",
+                    description: "Bar local animé ayant pour mission de proposer uniquement les meilleurs produits locaux.",
+                    seeMore: "Voir plus",
+                    role: "Rôle",
+                    roleContent: "Design UX & Programmation",
+                    date: "Date",
+                    visitWebsite: "Visiter le site",
+                    context: "Contexte",
+                    contextContent: "Le Yisst souhaitait une refonte complète de leur site web, afin de mettre en valeur leurs produits et leur mission auprès de leurs clients. Le pub n'utilise aucun menu papier, rendre le menu clair et accessible à tous était donc ma plus grande priorité.",
+                    design: "Design",
+                    colors: {
+                        kobicha: "Kobicha",
+                        sienna: "Terre de Sienne",
+                        bronze: "Bronze",
+                        dune: "Dune",
+                        gunmetal: "Gunmetal"
+                    },
+                    tech: "Technologie",
+                    techContent: "Le principal défi avec le Yisst était de fournir un moyen de garder le menu dynamique, car les bières sont changées presque tous les jours. J'ai proposé un menu interne lié à une base de données afin que le personnel puisse modifier les éléments facilement. L'intégration a été réalisée en utilisant Wix comme CMS.",
+                    back: "Retour"
+                }
             },
-            footer: {
-                contact: 'Contactez-moi',
-                resume: 'Téléchargez mon CV'
+            experiments: {
+                experiments: "Expériences",
+                moonPhases: {
+                    moonPhases: "Phases de la lune",
+                    newMoon: "Nouvelle lune",
+                    waxingCrescent: "Premier croissant",
+                    firstQuarter: "Premier quartier",
+                    waxingGibbous: "Gibbeuse croissante",
+                    fullMoon: "Pleine lune",
+                    waningGibbous: "Gibbeuse décroissante",
+                    lastQuarter: "Dernier quartier",
+                    waningCrescent: "Dernier croissant",
+                    nextFullMoon: "Prochaine pleine lune le "
+                }
+            },
+            about: {
+                aboutMe: "À propos de moi.",
+                description1: "Je suis un programmeur créatif qui crée des sites web et des applications web, tout en explorant l'art visuel informatique.",
+                description2: "J'ai de expérience dans l'industrie du jeu vidéo, où j'ai passé quelques années à concevoir des expériences interactives engageantes.",
+                description3: "J'ai étudié l'informatique et la musique numérique, curieux d'en apprendre davantage sur mon domaine et sur les nombreuses façons de combiner mes passions pour la technologie et la créativité.",
+                description4: "Je suis actuellement à la recherche de travail et disponible pour des contrats."
+            },
+            contact: {
+                letsTalk: "Discutons.",
+                questionProjects: "Une question ? Des projets ? Vous voulez simplement discuter ?",
+                name: "Nom*",
+                email: "Email*",
+                message: "Message*",
+                send: "Envoyer",
+                messageSent1: "Votre message a été envoyé !",
+                messageSent2: "Je vous répondrai dès que possible."
+            },
+            general: {
+                backToTop: "HAUT DE PAGE"
             }
         }
     }

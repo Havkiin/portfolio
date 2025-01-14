@@ -1,145 +1,221 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik+Mono+One&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet');
+@font-face {
+  font-family: 'Eras Demi ITC';
+  src: url('../fonts/eras-itc-demi.ttf') format('truetype');
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: 'Eras Medium ITC';
+  src: url('../fonts/eras-itc-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Freestyle Script';
+  src: url('../fonts/freescpt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url('../fonts/MYRIADPRO-REGULAR.OTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lucida Bright';
+  src: url('../fonts/lucida-bright.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lucida Bright Italic';
+  src: url('../fonts/lucida-bright-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lucida Sans Regular';
+  src: url('../fonts/lucida-sans-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'True North';
+  src: url('../fonts/TrueNorth-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+}
 
 :root {
-  --black: #212121;
-  --onyx: #3B3B3B;
-  --grey: #6B6B6B;
-  --white: #EEE;
-  --darker-white: #E0E0E0;
-  --darkest-white: #C9C9C9;
-  --orange: #E77935;
-  --blue: #5BC0EB;
-  --red: red;
+  --rich-black: #090D20;
+  --oxford-blue: #092141;
+  --berkeley-blue: #083562;
+  --lapis-lazuli: #046388;
+  --sandy-brown: #ED962B;
+  --isabelline: #F2F0EB;
+
+  --night-green: #060E09;
+  --dark-green: #0C1D11;
+  --light-green: #183A22;
+  --vandyke-brown: #523A34;
+  --caramel: #CB793A;
+  --hunyadi-yellow: #DFB154;
+  --arylide-yellow: #E6CA5C;
+  --antique-white: #F2E6D8;
+
+  --antiflash-white: #F0F0F0;
+
+  --curtain-open-time: 1s;
 }
 
-.BioRoot {
-  width: 50vw;
-  align-items: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App {
-  background-color: var(--black);
-  color: var(--white);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1.5vw);
-  text-align: center;
-  color-scheme: dark;
-  font-family: "Rubik", sans-serif;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  margin: 0;
 }
 
-.Roboto {
-  font-family: "Roboto Slab", serif;
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.AppHeader {
-  width: 100%;
-  height: 7vh;
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: center;
-  padding: 2vh 0 2vh;
-  font-size: 0.5em;
-  z-index: 1;
+.eras-demi-itc {
+  font-family: 'Eras Demi ITC', sans-serif;
 }
 
-.HeaderItem {
-  display: inline-block;
-  padding: 0 2% 0;
+.eras-medium-itc {
+  font-family: 'Eras Medium ITC', sans-serif;
 }
 
-.HeaderItem:hover {
-  border: 5px;
-  text-decoration: underline;
+.freestyle-script {
+  font-family: 'Freestyle Script', sans-serif;
 }
 
-.LanguageSelect {
+.myriad-pro-regular {
+  font-family: 'Myriad Pro Regular', sans-serif;
+}
+
+.lucida-bright {
+  font-family: 'Lucida Bright', serif;
+}
+
+.lucida-bright-italic {
+  font-family: 'Lucida Bright Italic', serif;
+}
+
+.lucida-sans-regular {
+  font-family: 'Lucida Sans Regular', sans-serif;
+}
+
+.true-north {
+  font-family: 'True North', sans-serif;
+}
+
+.source-code-pro {
+  font-family: 'Source Code Pro', sans-serif;
+}
+
+.BackArrow {
   position: absolute;
-  right: 5%;
-}
-
-.LanguageSelect:hover {
-  text-decoration: underline;
-}
-
-.textLink {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.textLink::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
+  top: 0;
   left: 0;
-  transform: scaleX(0);
-  transform-origin: top left;
-  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.textLink:hover::before {
-  transform: scaleX(1);
-}
-
-.orange {
-  color: var(--orange);
-}
-
-.orange::before {
-  background-color: var(--orange);
-}
-
-.greywhite {
-  color: #eee;
-}
-
-.greywhite::before {
-  background-color: #eee;
-}
-
-.black-background {
-  background-color: #000;
-}
-
-.lightgrey-background {
-  background-color: var(--onyx);
-}
-
-.lightergrey-background {
-  background-color: var(--grey);
-}
-
-.Content {
+.Curtain {
+  position: fixed;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  height: 100vh;
+  transform-origin: top;
+  transform: scaleY(0);
+  z-index: 10;
 }
 
-.AppFooter {
-  height: 7vh;
-  width: 100%;
-  padding: 0 12.5% 0;
-  display: flex;
-  font-size: 0.4em;
-  align-items: center;
-  justify-content: space-evenly;
+.Curtain.open {
+  animation: var(--curtain-open-time) ease scaleY-down;
+}
+
+.Curtain.closed {
+  animation: var(--curtain-open-time) ease scaleY-up;
+}
+
+@keyframes scaleY-down {
+  from {
+      transform: scaleY(1);
+  }
+  to {
+      transform: scaleY(0);
+  }
+}
+
+.scaleY-down {
+  animation: scaleY-down ease 1s forwards;
+}
+
+@keyframes scaleY-up {
+  from {
+      transform: scaleY(0);
+  }
+  to {
+      transform: scaleY(1);
+  }
+}
+
+.scaleY-up {
+  animation: scaleY-up ease 1s;
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+@keyframes slide-from-bottom {
+  from {
+      opacity: 0;
+      transform: translateY(max(2vh, 2vw));
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.slide-from-bottom {
+  opacity: 0;
+  animation: slide-from-bottom 1s ease forwards var(--animation-delay, 0.5s);
+}
+
+.scale-zero {
+  transform: scale(0);
+}
+
+@keyframes scale-up {
+  from {
+      transform: scale(0);
+  }
+  to {
+      transform: scale(1);
+  }
+}
+
+.scale-up {
+  transform: scale(0);
+  animation: scale-up 0.5s ease forwards var(--animation-delay, 0s);
+}
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rich-black {
+  color: var(--rich-black);
+}
+
+@media (orientation: portrait) {
+  .BackArrow svg {
+    width: 15vw;
+  }
 }

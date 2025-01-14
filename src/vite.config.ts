@@ -6,7 +6,12 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), legacy({ targets: ['defaults', 'not IE 11'] }), tsconfigPaths(), svgr()],
+  plugins: [react(), legacy({ targets: ['defaults', 'not IE 11'] }), tsconfigPaths(),
+  svgr({
+    svgrOptions: {
+      svgo: false,
+    },
+  })],
   define: {
     global: 'globalThis',
   },

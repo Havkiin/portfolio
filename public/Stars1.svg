@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Stars1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e6e6;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="420" cy="458" r="8"/>
+  <circle class="cls-1" cx="629" cy="569" r="8"/>
+  <circle class="cls-1" cx="629" cy="240" r="8"/>
+  <circle class="cls-1" cx="1700" cy="140" r="8"/>
+  <circle class="cls-1" cx="1603" cy="474" r="8"/>
+  <circle class="cls-1" cx="1855" cy="545" r="8"/>
+  <circle class="cls-1" cx="1501" cy="795" r="8"/>
+  <circle class="cls-1" cx="1734" cy="952" r="8"/>
+  <circle class="cls-1" cx="1280" cy="952" r="8"/>
+  <circle class="cls-1" cx="898" cy="904" r="8"/>
+  <circle class="cls-1" cx="366" cy="750" r="8"/>
+  <circle class="cls-1" cx="257" cy="186" r="8"/>
+  <circle class="cls-1" cx="153" cy="540" r="8"/>
+  <circle class="cls-1" cx="1205" cy="561" r="8"/>
+</svg>

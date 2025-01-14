@@ -1,0 +1,396 @@
+.Projects {
+    height: 100vh;
+    background-color: var(--antiflash-white);
+    color: var(--antiflash-white);
+    overflow: hidden;
+}
+
+.ProjectName {
+    display: flex;  
+    flex-direction: column;
+    align-self: end;
+    width: 100%;
+    z-index: 2;
+}
+
+.ProjectName:hover > .ProjectTitle {
+    transform: translateX(2%);
+    transition: transform 0.5s ease;
+}
+
+.ProjectName:hover > .ProjectSubtitle {
+    transform: translateX(-10%);
+    transition: transform 1s ease;
+}
+
+.ProjectName:hover ~ * svg {
+    fill-opacity: 80%;
+    transition: fill-opacity 0.3s ease;
+}
+
+.ProjectName > * {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.ProjectTitle {
+    font-size: min(5vw, 7.5vh);
+}
+
+.ProjectSubtitle {
+    margin-left: 10%;
+    font-size: min(4vw, 6vh);
+}
+
+.ProjectImageContainer {
+    display: grid;
+    grid-template-rows: 60% 25% 15%;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 17%;
+    left: 25%;
+    justify-self: center;
+    align-self: center;
+    width: 45%;
+    height: 65%;
+    background-image: url('/Yisst.png');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.481);
+}
+
+.ProjectImageContainer > * {
+    margin-left: 8%;
+}
+
+@keyframes to-banner {
+    from {
+        top: 17%;
+        left: 25%;
+        width: 50%;
+        height: 65%;
+    }
+    to {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+    }
+}
+
+@keyframes to-banner-shadow {
+    from {
+        top: 17%;
+        left: 25%;
+        width: 50%;
+        height: 65%;
+    }
+    to {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+    }
+}
+
+.toBanner {
+    animation: to-banner 0.5s ease forwards;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.toBannerShadow {
+    animation: to-banner-shadow 0.5s ease forwards;
+}
+
+@keyframes to-thumbnail {
+    from {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+    }
+    to {
+        top: 17%;
+        left: 25%;
+        width: 50%;
+        height: 65%;
+    }
+    100% {
+        pointer-events: all;
+    }
+}
+
+.toThumbnail {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    pointer-events: none;
+    animation: to-thumbnail 0.5s ease forwards 0.5s;
+}
+
+.ProjectImageContainer:hover + .ProjectName .ProjectTitle {
+    transform: translateX(10%);
+    transition: transform 1s ease;
+}
+
+.ProjectImageContainer:hover + .ProjectName .ProjectSubtitle {
+    transform: translateX(-10%);
+    transition: transform 1s ease;
+}
+
+.ProjectImageContainer:hover ~ .ProjectImageShadow svg {
+    fill-opacity: 80%;
+    transition: fill-opacity 0.3s ease;
+}
+
+.ProjectImageShadow:hover svg {
+    fill-opacity: 80%;
+    transition: fill-opacity 0.3s ease;
+}
+
+.ProjectImageShadow svg {
+    position: absolute;
+    z-index: 1;
+    fill-opacity: 60%;
+    transition: fill-opacity 0.3s ease;
+}
+
+.ProjectImageShadow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    width: 45%;
+    height: 65%;
+    top: 17%;
+    left: 25%;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.ProjectImageShadow2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    transform-origin: center top;
+    width: 45%;
+    height: 65%;
+    top: 17%;
+    left: 25%;
+    z-index: 5;
+    transform: scaleY(1);
+}
+
+@keyframes to-thumbnail-shadow {
+    from {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+    }
+    to {
+        top: 17%;
+        left: 25%;
+        width: 50%;
+        height: 65%;
+    }
+    100% {
+        pointer-events: all;
+    }
+}
+
+.toThumbnailShadow {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    pointer-events: none;
+    animation: to-thumbnail-shadow 0.5s ease forwards 0.5s;
+}
+
+.toBannerShadow svg rect {
+    fill-opacity: 60%;
+}
+
+.ProjectDescription {
+    font-size: min(2vw, 2.5vh);
+    z-index: 2;
+    width: 70%;
+}
+
+.SeeMoreButton {
+    width: 100%;
+    height: 100%;
+    background-color: var(--caramel);
+    color: var(--isabelline);
+    font-size: min(2vw, 2.5vh);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    border: none;
+    top: 65%;
+    left: 40%;
+    width: 20%;
+    height: 40%;
+    z-index: 2;
+}
+
+.SeeMoreButton:hover {
+    transform: translateY(-10%);
+}
+
+@keyframes dissolve {
+    from {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    to {
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.dissolve {
+    animation: dissolve 1s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes condense {
+    from {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100% {
+        pointer-events: all;
+    }
+}
+
+.condense {
+    filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    animation: condense 1s ease forwards 0.5s;
+}
+
+@media (orientation: portrait) {
+    .Projects {
+        height: 56vh;
+    }
+
+    .ProjectImageContainer {
+        width: 65%;
+        height: 45%;
+        top: 27%;
+        left: 20%;
+    }
+
+    .ProjectImageShadow {
+        width: 65%;
+        height: 45%;
+        top: 27%;
+        left: 20%;
+    }
+
+    .toBannerShadow {
+        pointer-events: none;
+    }
+
+    @keyframes to-banner {
+        from {
+            width: 65%;
+            height: 45%;
+            top: 27%;
+            left: 20%;
+        }
+        to {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 52vh;
+        }
+    }
+
+    @keyframes to-banner-shadow {
+        from {
+            width: 65%;
+            height: 45%;
+            top: 27%;
+            left: 20%;
+        }
+        to {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 52vh;
+        }
+    }
+
+    .toThumbnail {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 52vh;
+    }
+
+    .toThumbnailShadow {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 52vh;
+    }
+
+    @keyframes to-thumbnail {
+        from {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 52vh;
+        }
+        to {
+            width: 65%;
+            height: 45%;
+            top: 27%;
+            left: 20%;
+        }
+        100% {
+            pointer-events: all;
+        }
+    }
+
+    @keyframes to-thumbnail-shadow {
+        from {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 52vh;
+        }
+        to {
+            width: 65%;
+            height: 45%;
+            top: 27%;
+            left: 20%;
+        }
+        100% {
+            pointer-events: all;
+        }
+    }
+
+    .ProjectColor {
+        height: 48vh;
+    }
+}

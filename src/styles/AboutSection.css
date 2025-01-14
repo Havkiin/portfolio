@@ -1,0 +1,424 @@
+.About {
+    height: 80vh;
+    background-color: var(--light-green);
+    color: var(--isabelline);
+    overflow: hidden;
+}
+
+.ContactContainer {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    width: 100%;
+}
+
+.ProfilePicture {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Website_Profile_2.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.ProfilePicture img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ProfileDescription {
+    display: grid;
+    grid-template-rows: 25% 14% 14% 14% 14% 19%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    width: 60%;
+    height: 100%;
+    transform: translateX(-94%);
+    transition: transform 0.5s ease;
+}
+
+.expandOnHover:hover {
+    transform: translateX(-90%);
+}
+
+.ProfileDescriptionBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    filter: opacity(70%);
+    transition: filter 0.3s ease;
+}
+
+.ProfileDescriptionTitle {
+    z-index: 2;
+    align-self: center;
+    padding-left: 10%;
+    font-size: min(4vw, 6vh);
+}
+
+.ProfileDescriptionContent {
+    z-index: 2;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    font-size: min(1.5vw, 2.25vh);
+}
+
+.ProfileButtonContainer {
+    position: relative;
+    justify-self: center;
+    bottom: 5%;
+    width: 25%;
+    height: 50%;
+}
+
+.ProfileButton {
+    width: 100%;
+    background-color: var(--caramel);
+    color: var(--isabelline);
+    font-size: min(1.5vw, 2.25vh);
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+.ProfileButton:hover {
+    transform: translateY(-10%);
+    transition: transform 0.3s ease;
+}
+
+.ExpandArrow {
+    position: absolute;
+    display: grid;
+    height: 100%;
+    width: 6%;
+    font-size: 4rem;
+    right: 0;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.5s ease;
+}
+
+.aboutExpanded {
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+
+.aboutExpanded .ProfileDescriptionBackground {
+    filter: opacity(70%);
+}
+
+.flipped {
+    transform: rotate(180deg);
+}
+
+.IconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+    width: 80%;
+    height: 70%;
+    z-index: 2;
+}
+
+.Icon {
+    justify-items: center;
+    height: 100%;
+    width: 10%;
+}
+
+.IconImage {
+    width: 100%;
+    height: 60%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.IconName {
+    width: 100%;
+    height: 20%;
+    padding-top: 20%;
+}
+
+.HTML {
+    background-image: url(/HTML5_logo_white.png);
+}
+
+.HTML:hover {
+    background-image: url(/HTML5_logo.png);
+}
+
+.CSS {
+    background-image: url(/CSS3_logo_white.png);
+}
+
+.CSS:hover {
+    background-image: url(/CSS3_logo.png);
+}
+
+.TypeScript {
+    background-image: url(/Typescript_logo_white.png);
+}
+
+.TypeScript:hover {
+    background-image: url(/Typescript_logo.png);
+}
+
+.React {
+    background-image: url(/React_logo_white.png);
+}
+
+.React:hover {
+    background-image: url(/React_logo.png);
+}
+
+.Node {
+    background-image: url(/Node.js_logo_white.png);
+}
+
+.Node:hover {
+    background-image: url(/Node.js_logo.png);
+}
+
+.Unity {
+    background-image: url(/Unity_logo_white.png);
+}
+
+.Unity:hover {
+    background-image: url(/Unity_logo.png);
+}
+
+.UnrealEngine {
+    background-image: url(/Unreal_Engine_logo_white.png);
+}
+
+.UnrealEngine:hover {
+    background-image: url(/Unreal_Engine_logo.png);
+}
+
+.IconName {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.Icon:hover .IconName {
+    opacity: 1;
+}
+
+.Icon img {
+    max-width: 100%;
+    max-height: 100%;
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s ease;
+}
+
+.Icon img:hover {
+    transform: translateY(-20%) scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.ContactButton {
+    justify-self: center;
+    height: 77%;
+}
+
+.ProfileButtonContainer .SendButton {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+}
+
+.ProfileButtonContainer svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    opacity: 0;
+    cursor: default;
+}
+
+.ContactForm {
+    display: grid;
+    grid-template-rows: 12% 8% 10% 10% 40% 20%;
+    justify-items: center;
+    height: 90%;
+    width: 80%;
+    margin: 5% 10% 5% 10%;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+.ContactFormClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: min(2vw, 3vh);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.ContactFormClose:hover {
+    transform: rotate(0.5turn);
+    transition: transform 0.3s ease;
+}
+
+.ContactFormTitle {
+    font-size: min(4vw, 6vh);
+    align-self: end;
+}
+
+.ContactFormSubtitle {
+    align-self: start;
+}
+
+.ContactInput {
+    width: 100%;
+    margin-top: 5%;
+    background-color: transparent;
+    border-style: none none solid none;
+    outline: none;
+    color: var(--isabelline);
+    font-size: 1rem;
+}
+
+.ContactInput:focus {
+    outline: none;
+}
+
+.ContactField {
+    height: 60%;
+}
+
+.ContactMessage {
+    height: 80%;
+}
+
+.disabledButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+}
+
+.grayBorder {
+    border-color: gray;
+}
+
+.redBorder {
+    border-color: red;
+}
+
+.whiteBorder {
+    border-color: var(--isabelline);
+}
+
+.ProfileButtonContainer svg > * {
+    transform-origin: 50%;
+}
+
+.LoadingCircle1 {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0.4;
+    transform: rotate(0.2turn);
+    animation: 2s cubic-bezier(.36,.07,.72,.93) infinite forwards rotateCircle1;
+}
+
+.LoadingCircle2 {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0.6;
+    transform: rotate(0.7turn);
+    animation: 2s cubic-bezier(.36,.07,.72,.93) infinite reverse forwards rotateCircle2;
+}
+
+@keyframes rotateCircle1 {
+    from {
+        transform: rotate(0.2turn);
+    }
+    to {
+        transform: rotate(1.2turn);
+    }
+}
+
+@keyframes rotateCircle2 {
+    from {
+        transform: rotate(0.7turn);
+    }
+    to {
+        transform: rotate(1.7turn);
+    }
+}
+
+.SuccessMessage {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transform: translateY(1rem);
+    opacity: 0;
+}
+
+.appear-floating {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.SuccessMessage .Message1 {
+    font-size: 1.5rem;
+}
+
+.SuccessMessage .Message2 {
+    font-size: 0.8rem;
+}
+
+.SuccessMessage p {
+    margin: 0;
+}
+
+@media (orientation: portrait) {
+    .About {
+        height: 100vh;
+    }
+
+    .ContactContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 50%;
+    }
+
+    .ProfileDescription {
+        width: 100%;
+        height: 50%;
+    }
+
+    .ProfileDescriptionContent {
+        font-size: 1.5rem;
+    }
+
+    .ContactFormTitle {
+        font-size: 4rem;
+    }
+
+    .ContactFormSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .ContactInput {
+        font-size: 1.75rem;
+    }
+
+    .SendButton {
+        font-size: 2rem;
+    }
+}

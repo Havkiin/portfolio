@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e6e6e6;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Moon">
+      <circle class="cls-1" cx="960" cy="271" r="192"/>
+    </g>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <circle class="cls-2" cx="844.5" cy="247.5" r="34.5"/>
+    <circle class="cls-2" cx="1074.5" cy="247.5" r="34.5"/>
+    <circle class="cls-2" cx="1005.5" cy="357.5" r="34.5"/>
+    <circle class="cls-2" cx="970" cy="278" r="23"/>
+    <circle class="cls-2" cx="947" cy="155" r="23"/>
+    <circle class="cls-2" cx="879.5" cy="366.5" r="43.5"/>
+    <circle class="cls-2" cx="836.22" cy="178.05" r="8"/>
+  </g>
+</svg>
