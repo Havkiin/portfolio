@@ -21,7 +21,9 @@ const App: React.FC = () => {
           <Routes>
             <Route path={Pages.Home} element={<HomePage />} />
             <Route path={Pages.Yisst} element={<YisstPage />} />
-            <Route path={Pages.Moon} element={<MoonPage />} />  
+            <Route path={Pages.Yisst + '/'} element={<YisstPage />} />
+            <Route path={Pages.Moon} element={<MoonPage />} />
+            <Route path={Pages.Moon + '/'} element={<MoonPage />} />
           </Routes>
         </NavigationProvider>
     </Router>
