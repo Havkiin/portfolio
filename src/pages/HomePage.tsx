@@ -145,7 +145,6 @@ const HomePage : React.FC = () => {
     bannerShadowRef : React.RefObject<HTMLDivElement>,
     nameRef : React.RefObject<HTMLDivElement>
   ) => {
-    console.log('here we gogogo');
     scrollToSection(projectsSectionRef, 300)
       .then(() => dissolveElements(bannerRef, nameRef))
       .then(() => changeLayout(bannerRef, bannerShadowRef))
