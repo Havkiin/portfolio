@@ -4,3 +4,5 @@ dist
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+server-build
+server-build.zip

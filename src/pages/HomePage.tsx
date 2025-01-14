@@ -341,7 +341,7 @@ const HomePage : React.FC = () => {
             {i18next.t('experiments:experiments')}
           </div>
           <div 
-            className={"ExperimentsContainer opacity-zero" + (visibleItems[2] ? ' slide-from-bottom' : '')}
+            className="ExperimentsContainer"
             style={{ '--animation-delay': '0.2s' } as any}
           >
             <div className="Experiment" onClick={() => transitionToExperiment(Pages.Moon)}>
