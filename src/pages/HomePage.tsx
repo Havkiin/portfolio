@@ -32,7 +32,7 @@ const HomePage : React.FC = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [isAboutExpanded, setIsAboutExpanded] = useState(false);
   const [isCurtainClosed, setIsCurtainClosed] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string | undefined>('en');
+  const [otherLanguage, setOtherLanguage] = useState<string | undefined>('fr');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -68,10 +68,14 @@ const HomePage : React.FC = () => {
   }
 
   const changeLanguage = () => {
+    setOtherLanguage(getOtherLanguage);
     const lng = i18next.resolvedLanguage === 'en' ? 'fr' : 'en';
-    setCurrentLanguage(lng);
 
     i18next.changeLanguage(lng);
+  }
+
+  const getOtherLanguage = () => {
+    return (i18next.resolvedLanguage === 'en') ? 'fr' : 'en';
   }
 
   const dissolveElements = (
@@ -206,7 +210,7 @@ const HomePage : React.FC = () => {
   }, [location.hash]);
 
   useEffect(() => {
-    setCurrentLanguage(i18next.resolvedLanguage);
+    setOtherLanguage(getOtherLanguage());
   }, []);
 
   return (
@@ -233,7 +237,7 @@ const HomePage : React.FC = () => {
             {i18next.t('sections:about')}
           </span>
           <span className="HeaderElement" onClick={() => changeLanguage()}>
-            {currentLanguage?.toUpperCase()}
+            {otherLanguage?.toUpperCase()}
           </span>
         </div>
         <div className="MainElements">
@@ -302,10 +306,13 @@ const HomePage : React.FC = () => {
           >
             {i18next.t('sections:projects')}
           </div>
-          <div className={"ProjectImageContainer" +
+          <div
+            className={"ProjectImageContainer" +
             ((navigationType === 'in-app' && previousPage === Pages.Yisst) ?
               ' toThumbnail' :
-              '')} ref={yisstBannerRef}
+              '')}
+            ref={yisstBannerRef}
+            onClick={() => { transitionToProject(Pages.Yisst, yisstBannerRef, yisstBannerShadowRef, yisstNameRef)}}
           >
             <div className={"ProjectName" + ((navigationType === 'in-app' && previousPage === Pages.Yisst) ? ' condense' : '')} ref={yisstNameRef}>
               <div className="ProjectTitle eras-demi-itc">YISST</div>
@@ -315,7 +322,6 @@ const HomePage : React.FC = () => {
             </div>
             <button
               className={"SeeMoreButton lucida-sans-regular" + ((navigationType === 'in-app' && previousPage === Pages.Yisst) ? ' condense' : '')}
-              onClick={() => { transitionToProject(Pages.Yisst, yisstBannerRef, yisstBannerShadowRef, yisstNameRef)}}
               >
                 {i18next.t('projects:yisst:seeMore')}
             </button>
@@ -344,13 +350,15 @@ const HomePage : React.FC = () => {
             className="ExperimentsContainer"
             style={{ '--animation-delay': '0.2s' } as any}
           >
-            <div className="Experiment" onClick={() => transitionToExperiment(Pages.Moon)}>
-              <div className="ExperimentCover eras-demi-itc">{i18next.t('experiments:moonPhases:moonPhases')}</div>
-            </div>
-            <div className={"ExperimentShadow" + (visibleItems[2] ? ' scaleY-down' : '')}>
-              <svg xmlns="http://www.w3.org/2000/svg" width='100%' height='100%'>
-                <rect x='0' y='0' width='100%' height='100%' fill='black' opacity='100%' />
-              </svg>
+            <div className="SingleExperimentContainer">
+              <div className="Experiment" onClick={() => transitionToExperiment(Pages.Moon)}>
+                <div className="ExperimentCover eras-demi-itc">{i18next.t('experiments:moonPhases:moonPhases')}</div>
+              </div>
+              <div className={"ExperimentShadow" + (visibleItems[2] ? ' scaleY-down' : '')}>
+                <svg xmlns="http://www.w3.org/2000/svg" width='100%' height='100%'>
+                  <rect x='0' y='0' width='100%' height='100%' fill='black' opacity='100%' />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

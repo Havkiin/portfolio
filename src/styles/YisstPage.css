@@ -347,11 +347,14 @@ body {
 }
 
 .BackLinkText {
+    display: grid;
     position: relative;
+    font-size: 2.5rem;
 }
 
 .BackLinkText p {
     margin: 0;
+    align-self: center;
 }
 
 .BackLink:hover svg {

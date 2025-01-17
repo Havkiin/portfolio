@@ -9,6 +9,10 @@ import '../styles/MoonPage.css'
 
 const MoonPage : React.FC = () => {
     const [isCurtainClosed, setIsCurtainClosed] = useState(false);
+    const [pickedDay, setPickedDay] = useState(1);
+    const [pickedMonth, setPickedMonth] = useState(1);
+    const [pickedYear, setPickedYear] = useState(2001);
+    const [pickedDate, setPickedDate] = useState<Date | null>(null);
 
     const moonRef = useRef<HTMLDivElement>(null);
     const stars1Ref = useRef<HTMLDivElement>(null);
@@ -23,68 +27,117 @@ const MoonPage : React.FC = () => {
 
     const lunarMonth = 29.53;
 
-    const getMoonPhaseInDays = (date : Date) => {
+    const validatePickedDay = (day: number) => {
+        if (day < 1)
+            day = 1;
+        else if (day > 31)
+            day = 31;
+
+        setPickedDay(day);
+        setNewPickedDate(day, pickedMonth, pickedYear);
+    }
+
+    const validatePickedMonth = (month: number) => {
+        if (month < 1)
+            month = 1;
+        else if (month > 12)
+            month = 12;
+
+        setPickedMonth(month);
+        setNewPickedDate(pickedDay, month, pickedYear);
+    }
+    
+    const validatePickedYear = (year: number) => {
+        if (year < 2001)
+            year = 2001;
+        else if (year > 9999)
+            year = 9999;
+
+        setPickedYear(year);
+        setNewPickedDate(pickedDay, pickedMonth, year);
+    }
+
+    const setNewPickedDate = (day?: number, month?: number, year?: number) => {
+        let date;
+        
+        if (!day) 
+            date = new Date();
+        else
+            date = new Date(year!, month!- 1, day!);
+
+        setPickedDate(date);
+    }
+
+    const getMoonPhaseInDays = (date : Date | null) => {
+        if (date === null)
+            return;
+
         const knownNewMoon = new Date('2000-01-06T18:14:00Z');
         const diff = (date.getTime() - knownNewMoon.getTime()) / (1000 * 60 * 60 * 24);
         const phase = (diff % lunarMonth + lunarMonth) % lunarMonth;
         return phase;
     }
 
-    const getNextFullMoon = (currentDate : Date) => {
-        const currentPhase = getMoonPhaseInDays(currentDate);
-        const daysUntilFullMoon = (14.77 - currentPhase + lunarMonth) % lunarMonth;
-        const nextFullMoonDate = new Date(currentDate.getTime() + daysUntilFullMoon * 24 * 60 * 60 * 1000);
+    const getNextFullMoon = (date : Date | null) => {
+        if (!date)
+            date = new Date();
+
+        const currentPhase = getMoonPhaseInDays(date);
+        const daysUntilFullMoon = (14.75 - currentPhase! + lunarMonth) % lunarMonth;
+        const nextFullMoonDate = new Date(date.getTime() + daysUntilFullMoon * 24 * 60 * 60 * 1000);
         return nextFullMoonDate;
     };
 
-    const formatDateToDDMMYYYY = (date : Date) => {
+    const dateToDDMMYYYY = (date : Date) => {
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
     };
 
-    const getMoonPhaseName = (moonPhaseInDays : number) => {
-        if (moonPhaseInDays <= 1.84) {
+    const getMoonPhaseName = (moonPhaseInDays : number | undefined) => {
+        if (moonPhaseInDays === undefined)
+            return;
+
+        if (moonPhaseInDays <= 1) {
             return i18next.t('experiments:moonPhases:newMoon');
-        } else if (moonPhaseInDays <= 7.38) {
+        } else if (moonPhaseInDays <= 7.375) {
             return i18next.t('experiments:moonPhases:waxingCrescent');
-        } else if (moonPhaseInDays <= 9.22) {
+        } else if (moonPhaseInDays <= 8.375) {
             return i18next.t('experiments:moonPhases:firstQuarter');
-        } else if (moonPhaseInDays <= 14.77) {
+        } else if (moonPhaseInDays <= 14.75) {
             return i18next.t('experiments:moonPhases:waxingGibbous');
-        } else if (moonPhaseInDays <= 16.61) {
+        } else if (moonPhaseInDays <= 15.75) {
             return i18next.t('experiments:moonPhases:fullMoon');
-        } else if (moonPhaseInDays <= 22.15) {
+        } else if (moonPhaseInDays <= 22.125) {
             return i18next.t('experiments:moonPhases:waningGibbous');
-        } else if (moonPhaseInDays <= 24) {
+        } else if (moonPhaseInDays <= 23.125) {
             return i18next.t('experiments:moonPhases:lastQuarter');
-        } else if (moonPhaseInDays <= 29.53) {
+        } else if (moonPhaseInDays <= lunarMonth) {
             return i18next.t('experiments:moonPhases:waningCrescent');
         }
 
     }
     
-    const getMoonPhaseInDecimal = (date : Date) => {
+    const getMoonPhaseInDecimal = (date : Date | null) => {
+        if (!date)
+            date = new Date();
+        
         const phase = getMoonPhaseInDays(date);
-        return phase / lunarMonth;
+        return phase! / lunarMonth;
     }
 
     const moonCycleToCircleOffset = (moonPhaseDecimal : number) => {
-        const offsetLowBound = -50;
-        const offsetHighBound = 150;
+        const offsetMidPoint = 50;
+        const offsetHalfSize = 100;
+        const fullestMoonPoint = 0.51;
     
-        if (moonPhaseDecimal <= 0.5) {
-            return offsetLowBound * (moonPhaseDecimal * 2);
+        if (moonPhaseDecimal <= fullestMoonPoint) {
+            return offsetMidPoint - offsetHalfSize * (moonPhaseDecimal * (1 / fullestMoonPoint));
         } else {
-            return offsetHighBound - (offsetHighBound * ((moonPhaseDecimal - 0.5) * 2));
+            return (offsetMidPoint + offsetHalfSize) - offsetHalfSize * ((moonPhaseDecimal - fullestMoonPoint) * (1 / fullestMoonPoint));
         }
     }
-
-    const dateToday = new Date();
-    const currentMoonPhaseInDays = getMoonPhaseInDays(dateToday);
-    const currentMoonPhaseDecimal = getMoonPhaseInDecimal(dateToday);
-    const nextFullMoonDate = getNextFullMoon(dateToday);
 
     const closeCurtain = () => {
         return new Promise<void>((resolve) => {
@@ -108,6 +161,15 @@ const MoonPage : React.FC = () => {
         setPreviousPage(Pages.Moon);
     }, [setPreviousPage]);
 
+    useEffect(() => {
+        const dateToday = new Date();
+
+        setPickedDay(dateToday.getDate());
+        setPickedMonth(dateToday.getMonth() + 1);
+        setPickedYear(dateToday.getFullYear());
+        setNewPickedDate();
+    }, []); 
+
     return (
         <div className="Environment">
             <div className={"Curtain MoonCurtain open" + (isCurtainClosed ? ' closed' : '')}></div>
@@ -117,7 +179,7 @@ const MoonPage : React.FC = () => {
                         <circle cx='50' cy='50' r='50' />
                     </clipPath>
                     <circle 
-                        cx={moonCycleToCircleOffset(currentMoonPhaseDecimal)} cy='50' r='50'
+                        cx={moonCycleToCircleOffset(getMoonPhaseInDecimal(pickedDate))} cy='50' r='50'
                         className='MoonShadow'
                         fill='black' opacity='65%'
                         clipPath="url(#moonClip)"
@@ -127,10 +189,24 @@ const MoonPage : React.FC = () => {
             <div className="Stars1 BackgroundImage" ref={stars1Ref}></div>
             <div className="Stars2 BackgroundImage" ref={stars2Ref}></div>
             <div className="InfoHolder">
-                <p className="MoonPhaseName eras-demi-itc">{getMoonPhaseName(currentMoonPhaseInDays)}</p>
-                <p className="NextFullMoon">
-                    {i18next.t('experiments:moonPhases:nextFullMoon') + formatDateToDDMMYYYY(nextFullMoonDate)}
-                </p>
+                <div className="DateContainer">
+                    <input type='text' name='day' className="Day"
+                        value={pickedDay}
+                        onChange={(e) => setPickedDay(parseInt(e.target.value))}
+                        onBlur={(e) => validatePickedDay(parseInt(e.target.value))}/> /
+                    <input type='number' name='month' className="Month"
+                        value={pickedMonth}
+                        onChange={(e) => setPickedMonth(parseInt(e.target.value))}
+                        onBlur={(e) => validatePickedMonth(parseInt(e.target.value))}/> /
+                    <input type='number' name='year' className="Year"
+                        value={pickedYear}
+                        onChange={(e) => setPickedYear(parseInt(e.target.value))}
+                        onBlur={(e) => validatePickedYear(parseInt(e.target.value))}/>
+                </div>  
+                <div className="MoonPhaseName eras-demi-itc">{getMoonPhaseName(getMoonPhaseInDays(pickedDate))}</div>
+                <div className="NextFullMoon">
+                    {i18next.t('experiments:moonPhases:nextFullMoon') + dateToDDMMYYYY(getNextFullMoon(pickedDate))}
+                </div>
             </div>
             <div className='BackArrow' onClick={transitionToHome}>
                 <svg className='ArrowSVG' xmlns="http://www.w3.org/2000/svg" width='6vw' height='10vh' viewBox='0 0 100 100'>
