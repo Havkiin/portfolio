@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Pages } from '../App';
-import useParallaxWithMouse from '../hooks/ParallaxWithMouse';
 import { useNavigationContext } from '../hooks/NavigationContext';
 import { loadPage } from '../hooks/loadPage'
+import useParallaxWithMouse from '../hooks/ParallaxWithMouse';
 import i18next from '../data/Translations';
 import '../styles/MoonPage.css'
 
